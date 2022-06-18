@@ -10,3 +10,17 @@ navbar-links:
   Security & Privacy FAQ: security
   Thoughts: thoughts
   
+
+navbar-col: #7957d5
+navbar-text-col: #fff
+navbar-border-col: #7957d5
+
+page-col: #fff
+text-col: #000
+link-col: #7957d5
+hover-col: #000
+
+footer-col: #f2effb
+footer-text-col: #552fbc
+footer-link-col: #000000
+footer-hover-col: #7957d5
