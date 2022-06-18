@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+  <style>
+    main.container {
+      max-width: 400px !important;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+<main id="app" class="section container">
+  <b-field>
+    <b-input v-model="username" placeholder="Username or E-Mail"></b-input>
+  </b-field>
+  <div>
+    <b-button type="is-primary" @click="register()" :disabled="!username || isRegistered">Register</b-button>
+    <b-button type="is-primary" @click="login()" :disabled="!isRegistered">Sign In</b-button>
+  </div>
+</main>
+
+<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
+<script src='https://unpkg.com/cbor-web'></script>
+<script src="js/passwordless.js"></script>
+
+<script>
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      username: null,
+    },
+    computed: {
+      isRegistered() {
+        console.log(this.username + ' => ' + !!window.localStorage.getItem(this.username))
+        return !!window.localStorage.getItem(this.username)
+      }
+    },
+    methods: {
+      async register() {
+        let res = await register(this.username)
+        console.log(res)
+        window.localStorage.setItem(this.username, res.credential.id)
+      },
+      async login() {
+        let credentialId = window.localStorage.getItem(this.username)
+        let res = await login(this.username, [credentialId])
+        console.log(res)
+      }
+    }
+  })
+</script>
+</body>
+</html>
