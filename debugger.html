@@ -15,12 +15,12 @@
 <body>
 <main id="app" class="section container">
   <b-field>
-    <b-input v-model="username" placeholder="Username or E-Mail"></b-input>
+    <b-input v-model="username" placeholder="Username or E-Mail" @input="checkIsRegistered()"></b-input>
   </b-field>
   <div>
     <b-button type="is-primary" @click="register()" :disabled="!username || isRegistered">Register</b-button>
     <b-button type="is-primary" @click="login()" :disabled="!isRegistered">Sign In</b-button>
-    <pre>{{response}}</pre>
+    <pre style="text-align:left">{{response}}</pre>
   </div>
 </main>
 
@@ -36,21 +36,21 @@
     el: '#app',
     data: {
       username: null,
-      response: null
-    },
-    computed: {
-      isRegistered() {
-        console.log(this.username + ' => ' + !!window.localStorage.getItem(this.username))
-        return !!window.localStorage.getItem(this.username)
-      }
+      response: null,
+      isRegistered: false,
     },
     methods: {
+      async checkIsRegistered() {
+        console.log(this.username + ' => ' + !!window.localStorage.getItem(this.username))
+        this.isRegistered = !!window.localStorage.getItem(this.username)
+      },
       async register() {
         let res = await register(this.username)
         console.log(res)
         this.response = res
 
         window.localStorage.setItem(this.username, res.credential.id)
+        await this.checkIsRegistered()
       },
       async login() {
         let credentialId = window.localStorage.getItem(this.username)

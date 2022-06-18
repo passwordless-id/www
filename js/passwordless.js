@@ -19,7 +19,7 @@ function parseBase64(txt) {
 }
 
 function parseBase64url(txt) {
-    return parseBase64(txt.replace('-', '+').replace('_', '/'))
+    return parseBase64(txt.replaceAll('-', '+').replaceAll('_', '/'))
 }
 
 

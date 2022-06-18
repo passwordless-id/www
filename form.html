@@ -26,7 +26,6 @@
 <script src="https://unpkg.com/vue@2"></script>
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 
-<script src='https://unpkg.com/cbor-web'></script>
 <script src="js/passwordless.js"></script>
 
 <script>
@@ -45,11 +44,13 @@
       async register() {
         let res = await register(this.username)
         console.log(res)
+
         window.localStorage.setItem(this.username, res.credential.id)
-        await checkIsRegistered()
+        await this.checkIsRegistered()
       },
       async login() {
         let credentialId = window.localStorage.getItem(this.username)
+
         let res = await login(this.username, [credentialId])
         console.log(res)
       }
