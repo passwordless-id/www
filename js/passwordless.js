@@ -23,14 +23,14 @@ function parseBase64url(txt) {
 }
 
 
-function parseAttestation(attObj) {
+function parseAttestation(attestationObject) {
     if(!window.cbor)
         return null
 
     console.debug("Decoding attestation")
 
     // https://w3c.github.io/webauthn/#sctn-attestation
-    let att = cbor.decode(credential.response.attestationObject)
+    let att = cbor.decode(attestationObject)
     /*
      * attestation: {
      *   fmt: // vendor specific format of `attStmt`

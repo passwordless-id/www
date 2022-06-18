@@ -5,7 +5,7 @@ Passwordless
 
 ![img](img/54dc6e5b-f393-4135-b8e3-9143aa82290a.jpg)
 
-<iframe src="form.html" style="width:100%;border:none"></iframe>
+<iframe src="form.html" style="width:100%;height:200px;border:none;"></iframe>
 
 > Disclaimer: this demo solely triggers the webauthn protocol client side. It does not store any information, nor validates anything.
 
