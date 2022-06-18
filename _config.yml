@@ -1,1 +1,12 @@
 remote_theme: daattali/beautiful-jekyll
+
+title: Passwordless
+
+author: Arnaud Dagnelies
+
+navbar-links:
+  Usage: usage
+  Webauthn Guide: webauthn_guide
+  Security & Privacy FAQ: security
+  Thoughts: thoughts
+  
