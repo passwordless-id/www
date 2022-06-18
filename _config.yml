@@ -18,7 +18,7 @@ navbar-border-col: "#7957d5"
 page-col: "#fff"
 text-col: "#000"
 link-col: "#7957d5"
-hover-col: "#000"
+hover-col: "#f2effb"
 
 footer-col: "#f2effb"
 footer-text-col: "#552fbc"
