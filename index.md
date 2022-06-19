@@ -9,6 +9,14 @@ Passwordless
 
 > Disclaimer: this demo solely triggers the webauthn protocol client side. It does not store any information, nor validates anything.
 
+What is this about?
+-------------------
+
+"Passwordless" is a free public webservice aiming at making authentication smoother for the user, more secure and simple to use for developers.
+
+It leverages the latest webauthn protocol to provide passwordless authentication. The latter is based on secret credentials stored on the device only and protected by biometrics or device PIN.
+
+
 Usage
 -----
 
