@@ -1,3 +1,6 @@
+https://sequencediagram.org/
+
+```
 title Creating Key Pair
 
 participant Server
@@ -10,3 +13,4 @@ Authenticator->Authenticator: Stores private key on device
 Browser<<--Authenticator: Public key + signed challenge 
 Browser->Server: Public key + signed challenge
 Browser<--Server: Registration complete
+```
