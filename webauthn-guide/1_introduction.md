@@ -12,8 +12,8 @@ actor User
 
 Browser->Server: I want to register!
 Browser<<--Server: Please send me a public key
-Browser->User: TouchId, FaceId or Device PIN
-User-->Browser: OK
+Browser->User: Request biometrics or device PIN
+User-->Browser: User verified
 Browser->Browser: Cryptographic key pair created
 Browser->Server: Send public key
 Browser<<--Server: Device regsitered!
@@ -25,8 +25,8 @@ space
 
 Browser->Server: I want to login!
 Browser<<--Server: Please sign this challenge
-Browser->User: TouchId, FaceId or Device PIN
-User-->Browser: OK
+Browser->User: Request biometrics or device PIN
+User-->Browser: User verified
 Browser->Browser: Challenge signed with private key
 Browser->Server: Send signed challenge
 Server->Server: Verify signature using public key
