@@ -1,3 +1,8 @@
+Overview
+========
+
+![Overview diagram](overview.svg)
+
 ```
 title Passwordless Authentication
 
