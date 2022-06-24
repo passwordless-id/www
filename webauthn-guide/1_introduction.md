@@ -9,6 +9,7 @@ title Passwordless Authentication
 actor User
 
 ==Registration==
+
 Browser->Server: I want to register!
 Browser<<--Server: Please send me a public key
 Browser->User: TouchId, FaceId or Device PIN
@@ -17,8 +18,11 @@ Browser->Browser: Cryptographic key pair created
 Browser->Server: Send public key
 Browser<<--Server: Device regsitered!
 
+space
+space
 
 ==Authentication==
+
 Browser->Server: I want to login!
 Browser<<--Server: Please sign this challenge
 Browser->User: TouchId, FaceId or Device PIN
