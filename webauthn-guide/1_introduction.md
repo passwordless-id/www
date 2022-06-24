@@ -1,3 +1,29 @@
+```
+title Passwordless Authentication
+
+actor User
+
+==Registration==
+Browser->Server: I want to register!
+Browser<<--Server: Please send me a public key
+Browser->User: TouchId, FaceId or Device PIN
+User-->Browser: OK
+Browser->Browser: Cryptographic key pair created
+Browser->Server: Send public key
+Browser<<--Server: Device regsitered!
+
+
+==Authentication==
+Browser->Server: I want to login!
+Browser<<--Server: Please sign this challenge
+Browser->User: TouchId, FaceId or Device PIN
+User-->Browser: OK
+Browser->Browser: Challenge signed with private key
+Browser->Server: Send signed challenge
+Server->Server: Verify signature using public key
+Browser<<--Server: Welcome!
+```
+
 https://sequencediagram.org/
 
 ```
