@@ -18,9 +18,9 @@ Authenticator->User: Request biometrics or device PIN
 Authenticator<<--User: Done
 Authenticator->Authenticator: User verified
 Authenticator->Authenticator: Cryptographic key pair stored
-Authenticator-->>Browser: Key pair and \ndevice attestation
+Authenticator-->>Browser: Public key, \nchallenge and \nattestation
 deactivate Browser
-Browser->Server: Send public key, \nchallenge and \nattestation
+Browser->Server: Public key, \nchallenge and \nattestation
 Server->Server: Verify challenge
 Server->Server: Check attestation
 Server->Server: Store public key
