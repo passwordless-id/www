@@ -1,7 +1,9 @@
 Overview
 ========
 
-Official specification: https://www.w3.org/TR/webauthn/ - https://github.com/w3c/webauthn/
+Official specification: https://www.w3.org/TR/webauthn/
+
+Repo: https://github.com/w3c/webauthn/
 
 Useful websites:
 
