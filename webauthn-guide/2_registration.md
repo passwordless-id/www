@@ -87,3 +87,28 @@ Browser<<--Server: Device regsitered!
 ```
 
 </details>
+
+
+Creating a new key pair
+-----------------------
+
+This is done using [navigator.credentials.create]()(...)
+
+The provided object is a [PublicKeyCredentialCreationOptions](https://w3c.github.io/webauthn/#dictdef-publickeycredentialcreationoptions)
+
+let publicKeyCredentialCreationOptions = {
+    *"rp":{
+      "id": ...,
+      *"name":"..."
+    }
+    required PublicKeyCredentialUserEntity       user;
+
+    required BufferSource                             challenge;
+    required sequence<PublicKeyCredentialParameters>  pubKeyCredParams;
+
+    unsigned long                                timeout;
+    sequence<PublicKeyCredentialDescriptor>      excludeCredentials = [];
+    AuthenticatorSelectionCriteria               authenticatorSelection;
+    DOMString                                    attestation = "none";
+    AuthenticationExtensionsClientInputs         extensions;
+};
