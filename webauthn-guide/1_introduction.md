@@ -14,11 +14,10 @@ Useful websites:
 
 ![Overview diagram](overview.svg)
 
-<details><summary>Diagram source</summary>
-
-https://sequencediagram.org/
-
-```
+<details>
+    <summary>Diagram source</summary>
+    Made with https://sequencediagram.org
+<pre>
 title Passwordless Authentication
 
 actor User
@@ -46,6 +45,5 @@ Browser->Browser: Challenge signed with private key
 Browser->Server: Send signed challenge
 Server->Server: Verify signature using public key
 Browser<<--Server: Welcome!
-```
-
+</pre>
 </details>

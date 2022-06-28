@@ -1,5 +1,5 @@
-#remote_theme: daattali/beautiful-jekyll
-remote_theme: just-the-docs/just-the-docs
+remote_theme: daattali/beautiful-jekyll
+#remote_theme: just-the-docs/just-the-docs
 
 title: Passwordless
 
@@ -14,9 +14,6 @@ navbar-links:
   Security & Privacy FAQ: security
   Thoughts: thoughts
 
-#kramdown:
-#  input: GFM
-#  gfm_quirks: [paragraph_end]
 
 navbar-col: "#7957d5"
 navbar-text-col: "#fff"

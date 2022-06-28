@@ -59,9 +59,10 @@ The flow
 ![Registration flow diagram](registration.svg)
 
 
-<details><summary>Diagram source</summary>
-
-```
+<details>
+    <summary>Diagram source</summary>
+    Made with https://sequencediagram.org
+<pre>
 title Webauthn Registration
 
 actor User
@@ -83,8 +84,7 @@ Server->Server: Verify challenge
 Server->Server: Check attestation
 Server->Server: Store public key
 Browser<<--Server: Device regsitered!
-```
-
+</pre>
 </details>
 
 
