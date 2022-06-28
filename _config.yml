@@ -15,7 +15,7 @@ navbar-links:
   Thoughts: thoughts
 
 kramdown:
-  parse_block_html: true
+  input: GFM
 
 navbar-col: "#7957d5"
 navbar-text-col: "#fff"
