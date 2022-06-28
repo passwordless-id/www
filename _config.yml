@@ -6,13 +6,13 @@ title: Passwordless
 author: Arnaud Dagnelies
 
 navbar-links:
-  Usage: usage.md
+  Usage: usage
   Webauthn Guide:
-    - Introduction: webauthn-guide/1_introduction.md
-    - Regsitration: webauthn-guide/2_registration.md
-    - Authentication: webauthn-guide/3_authentication.md
-  Security & Privacy FAQ: security.md
-  Thoughts: thoughts.md
+    - Introduction: webauthn-guide/1_introduction
+    - Regsitration: webauthn-guide/2_registration
+    - Authentication: webauthn-guide/3_authentication
+  Security & Privacy FAQ: security
+  Thoughts: thoughts
   
 
 navbar-col: "#7957d5"
