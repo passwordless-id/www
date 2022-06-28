@@ -41,7 +41,7 @@ The private key will be kept secret, stored on the device and protected by your 
 So, what's the result of this call? A "PublicKeyCredential" and the start of your headhaches. ;) It's not some JSON that you can send over, it's an object with encoded byte buffers.
 
 ```js
-PublicKeyCredential {
+PublicKeyCredential {
    id: 'AQtKmY-...',
    rawId: <ArrayBuffer>,
    response: {
@@ -58,34 +58,6 @@ The flow
 
 ![Registration flow diagram](registration.svg)
 
-
-<details>
-    <summary>Diagram source</summary>
-    Made with https://sequencediagram.org
-<pre>
-title Webauthn Registration
-
-actor User
-participant Authenticator
-
-Browser->Server: I want to register!
-Browser<<--Server: challenge
-note over Browser: credentials.create(...)
-activate Browser
-Browser->Authenticator: Create key pair
-Authenticator->User: Request biometrics or device PIN
-Authenticator<<--User: Done
-Authenticator->Authenticator: User verified
-Authenticator->Authenticator: Cryptographic key pair stored
-Authenticator-->>Browser: Public key, \nchallenge and \nattestation
-deactivate Browser
-Browser->Server: Public key, \nchallenge and \nattestation
-Server->Server: Verify challenge
-Server->Server: Check attestation
-Server->Server: Store public key
-Browser<<--Server: Device regsitered!
-</pre>
-</details>
 
 
 Creating a new key pair
