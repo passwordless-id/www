@@ -13,7 +13,9 @@ navbar-links:
     - Authentication: webauthn-guide/3_authentication
   Security & Privacy FAQ: security
   Thoughts: thoughts
-  
+
+kramdown:
+  parse_block_html: true
 
 navbar-col: "#7957d5"
 navbar-text-col: "#fff"
