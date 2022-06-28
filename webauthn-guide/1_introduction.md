@@ -14,8 +14,7 @@ Useful websites:
 
 ![Overview diagram](overview.svg)
 
-<details>
-  <summary>Diagram source</summary>
+<details><summary>Diagram source</summary>
 
 https://sequencediagram.org/
 
