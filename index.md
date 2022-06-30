@@ -20,6 +20,8 @@ It leverages the latest webauthn protocol to provide passwordless authentication
 Usage
 -----
 
+![Usage diagram](img/usage.svg)
+
 From the browser:
 
     GET /user
