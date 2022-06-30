@@ -1,7 +1,24 @@
+E-Mails vs Usernames
+====================
+
+In most authentication systems, there is a basic choice regarding whether a username or an email should be used to identify a user. Sometimes, even both can be used to identify the same account.
+
+Now, this might seem like a trivial detail, but in the case of passwordless authentication using webauthn, this apperently superficial choice has a deeper impact than it appears. This article is about exploring the consequences and implications of choosing one or the other.
+
+### The benefits of usernames
+
+Before going through the problems of picking usernames as the leading identifier, let us look at the benefits.
+
+- it's anonymous. Some users might be inclined not to share their email for various reasons.
+- users can be directly registered, with a single "touch", without  password nor confirmation email.
+- there is no *need* for an email (unlike traditional systems with "forgot password")
+- it's slightly shorter to type
+
+
 Traditional vs passwordless
 ---------------------------
 
-The subject of these "thoughts" articles are often a bit vague yet fundamental. In order to easely follow the discussion, it is important to grasp the webauthn protocol's fundamentals. Since a picture is worth a thousand words:
+In order to easely follow the discussion, it is important to grasp the webauthn protocol's fundamentals. Since a picture is worth a thousand words:
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1kfw9qhwz3vb0b1gimbu.png)
 
@@ -17,21 +34,6 @@ This little tiny change has profound impact since:
 - you need a recovery plan in case the user looses its device
 
 
-Email vs Username
------------------
-
-In most authentication systems, there is a basic choice regarding whether a username or an email should be used to identify a user.
-
-There are several implication of either choice, especially in combination with the webauthn protocol.
-
-### The benefits of usernames
-
-Before going through the problems of picking usernames as the leading identifier, let us look at the benefits.
-
-- it's anonymous. Some users might be inclined not to share their email for various reasons.
-- users can be directly registered, with a single "touch", without  password nor confirmation email.
-- there is no *need* for an email (unlike traditional systems with "forgot password")
-- it's slightly shorter to type
 
 
 ### Uniqueness

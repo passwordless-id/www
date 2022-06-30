@@ -12,7 +12,8 @@ navbar-links:
     - Regsitration: webauthn-guide/2_registration
     - Authentication: webauthn-guide/3_authentication
   Security & Privacy FAQ: security
-  Thoughts: thoughts
+  Thoughts: 
+    - E-Mails vs Usernames: thoughts/emails-vs-usernames.md
 
 
 navbar-col: "#7957d5"
