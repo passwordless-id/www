@@ -1,28 +1,27 @@
 Registration
 ============
 
-Minimal example
----------------
+Example
+-------
 
 Simply open the browser dev tools and run it in the console!
 
 ```js
-let credential = await navigator.credentials.create({
-  publicKey: {
-    challenge: Uint8Array.from(
-        "random-string-from-server", c => c.charCodeAt(0)),
+let publicKey = {
+    challenge: Uint8Array.from("random-server-challenge", c=>c.charCodeAt(0)),
     rp: {
-        name: "Try it in the console!",
-        id: window.location.hostname
+        name: "Name of the website/app/company"
     },
     user: {
-        name: 'John Doe',
-        displayName: 'Johny',
-        id: Uint8Array.from("for-the-device-to-identify-user", c => c.charCodeAt(0))
+        id: Uint8Array.from("some-unrecognizable-user-id", c=>c.charCodeAt(0)),
+        name: "john.doe@example.com",
+        displayName: "John Doe",
     },
     pubKeyCredParams: [] // if empty, either ES256 or RSA256 will be used by default
-  }
-});
+};
+
+// Note: The following call will cause the authenticator to display UI.
+let registration = await navigator.credentials.create({ publicKey })
 ```
 
 There are many more options that can be used. This solely describes the most basic use case.
@@ -53,6 +52,8 @@ PublicKeyCredential {
 }
 ```
 
+To see how a "partly decoded" object looks like, I advise the [webauthn debugger](https://webauthn.me/debugger)
+
 The flow
 --------
 
@@ -68,18 +69,34 @@ This is done using [navigator.credentials.create]()(...)
 The provided object is a [PublicKeyCredentialCreationOptions](https://w3c.github.io/webauthn/#dictdef-publickeycredentialcreationoptions)
     
     let publicKeyCredentialCreationOptions = {
-        *"rp":{
-          "id": ...,
-          *"name":"..."
+        "rp":{
+          "id": "login.example.com", // The domain name (the default) or a suffix of it (without port) in case the credential should be used for multiple subdomains.
+          "name":"ACME Corporation" // (*) For example, "ACME Corporation", "Wonderful Widgets, Inc." or "ОАО Примертех".
+        },
+        "user": {
+            "id": buffer("rand0m..."), // (*) A user handle is an opaque byte sequence with a maximum size of 64 bytes, and is not meant to be displayed to the user.
+            "name": "alexm", // (*) A human-palatable identifier for a user account. It is intended only for display, i.e., aiding the user in determining the difference between user accounts with similar displayNames. For example, "alexm", "alex.mueller@example.com" or "+14255551234".
+            "displayName": "Alex Müller" // (*) A human-palatable name for the user account, intended only for display. For example, "Alex Müller" or "田中倫". 
+        },
+        "challenge": buffer("rand0m..."),
+        "pubKeyCredParams": [{
+            "alg": -257,
+            "type": "public-key"
+        }]
+        "timeout": 60000,
+        "excludeCredentials": [{
+            required DOMString                    type;
+            required BufferSource                 id;
+            sequence<DOMString>                   transports;
+        }],
+        "authenticatorSelection": {
+            authenticatorAttachment: "platform"|"cross-platform",
+            DOMString                    residentKey;
+            boolean                      requireResidentKey = false;
+            DOMString                    userVerification = "preferred"; // "required", "preferred", "discouraged"
         }
-        required PublicKeyCredentialUserEntity       user;
-    
-        required BufferSource                             challenge;
-        required sequence<PublicKeyCredentialParameters>  pubKeyCredParams;
-    
-        unsigned long                                timeout;
-        sequence<PublicKeyCredentialDescriptor>      excludeCredentials = [];
-        AuthenticatorSelectionCriteria               authenticatorSelection;
         DOMString                                    attestation = "none";
         AuthenticationExtensionsClientInputs         extensions;
     };
+
+Required parameters:
