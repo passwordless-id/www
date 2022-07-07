@@ -24,10 +24,11 @@ F. A. Q.
 The authentication only works on devices previously registered. 
 - the second factor is something you are. 
 A biometric check is used to verify it is you. 
-- the optional third factor is something you know. 
-A traditional password can optionally be added to enhance security.
 
 ### What if my device is stolen? 
+
+You should remove it from the list of registered devices. 
+
 
 What is this about?
 -------------------
