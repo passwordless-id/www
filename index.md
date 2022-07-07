@@ -9,6 +9,26 @@ Passwordless
 
 > Disclaimer: this demo solely triggers the webauthn protocol client side. It does not store any information, nor validates anything.
 
+F. A. Q. 
+-----
+
+### Is my fingerprint/face sent to the server? 
+
+**No.** Your fingerprint, face or other biometrics never leaves your device. 
+
+### Is it more secure than passwords? 
+
+**Yes.** It is basically a two factor authentication in a single step. 
+
+- the first factor is something you have. 
+The authentication only works on devices previously registered. 
+- the second factor is something you are. 
+A biometric check is used to verify it is you. 
+- the optional third factor is something you know. 
+A traditional password can optionally be added to enhance security.
+
+### What if my device is stolen? 
+
 What is this about?
 -------------------
 
