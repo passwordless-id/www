@@ -16,6 +16,8 @@ navbar-links:
     - E-Mails vs Usernames: thoughts/emails-vs-usernames.md
 
 
+edit_page_button: true
+
 navbar-col: "#7957d5"
 navbar-text-col: "#fff"
 navbar-border-col: "#7957d5"
