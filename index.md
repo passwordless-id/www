@@ -18,9 +18,10 @@ F. A. Q.
 
 ### How does it work? 
 
-It relies on a cryptographic system that uses a pair of keys. 
-Upon registration, the public key is sent to the server and the private key kept on the device, protected by biometrics. 
-Isolated, these keys are worthless, but in combination it can prove authenticity. 
+It relies on [asymetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
+Upon registration, a cryptographic key pair is generated. 
+The public key is sent to the server and the private key kept on the device, protected by biometrics. 
+The first key will be used to sign a message, the other to verify the signature, hereby proving authenticity. 
 
 ### Is it more secure than passwords? 
 
