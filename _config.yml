@@ -8,9 +8,9 @@ author: Arnaud Dagnelies
 navbar-links:
   Usage: usage
   Webauthn Guide:
-    - Introduction: webauthn-guide/1_introduction
-    - Regsitration: webauthn-guide/2_registration
-    - Authentication: webauthn-guide/3_authentication
+    - Introduction: webauthn/1_introduction
+    - Regsitration: webauthn/2_registration
+    - Authentication: webauthn/3_authentication
   Security & Privacy FAQ: security
   Thoughts: 
     - E-Mails vs Usernames: thoughts/emails-vs-usernames.md
