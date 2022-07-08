@@ -16,6 +16,12 @@ F. A. Q.
 
 **No.** Your fingerprint, face or other biometrics never leaves your device. 
 
+### How does it work? 
+
+It relies on a cryptographic system that uses a pair of keys. 
+Upon registration, the public key is sent to the server and the private key kept on the device, protected by biometrics. 
+Isolated, these keys are worthless, but in combination it can prove authenticity. 
+
 ### Is it more secure than passwords? 
 
 **Yes.** It is basically a two factor authentication in a single step. 
