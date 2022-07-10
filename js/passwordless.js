@@ -41,6 +41,9 @@ function parseAttestation(attestationObject) {
      *
      */
 
+
+    console.debug(att)
+
     // Base64 example of attestationObject.authData
     // authData = parseBase64('SZYN5YgOjGh0NBcPZHZgW4/krrmihjLHmVzzuoMdl2NFAAAAAAAAAAAAAAAAAAAAAAAAAAAAIP+nd26ubd84m5vaSMMyqwbFQbt9Inz/nChP5TrlOiOdpAEDAzkBACBZAQCmYB3osd3rcOrmOKGbit3WfvpBGGsTQqtZOTSh9OFBLMtFrNHwS24qnwUH+sAJTYQlgNcLOAwW+43cxMVOki4sxulyPeJcCSRXMFd5WH7umiqnbjyCTOxmxcwXHYOoGLteWHe4Z83eUiaJpMv1nHew0qESTAvEKKPRBPZuSVotxaeVVU7wDYsm2GIDQsMv8EvHeskb9dEyzvpk85yxsKuXQfOPoHx5Ue+VfcE3yTz0k8Nxrs5yTCPNY7WL4rgOoINzJ31jcpqpBVdcfPZ8yNwDD4b0FbUxzjhWiFRHAt/3v1dP9LSkXfh7qlHB/5Ws/w6xppuBKLn3+Arl/aiRALqrIUMBAAE=')
 
@@ -79,13 +82,12 @@ async function register(username) {
             displayName: username,
         },
         pubKeyCredParams: [
-            {alg: -36, type: "public-key"},  // ES-512
-            {alg: -259, type: "public-key"}, // RS-512
-            {alg: -7, type: "public-key"},   // ES-256 (Webauthn's default algorithm)
-            {alg: -257, type: "public-key"}, // RS-256 (for Windows Hello and many others)
+            {alg: -7, type: "public-key"},   // ES256 (Webauthn's default algorithm)
+            {alg: -257, type: "public-key"}, // RS256 (for Windows Hello and many others)
+            {alg: -8, type: "public-key"}, // EdDSA (for some security keys)
         ],
         timeout: 60000,
-        //attestation: "direct"
+        attestation: "direct"
     }
 
     console.debug(creationOptions)

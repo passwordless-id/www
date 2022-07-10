@@ -18,8 +18,8 @@
     <b-input v-model="username" placeholder="Username or E-Mail" @input="checkIsRegistered()"></b-input>
   </b-field>
   <div>
-    <b-button type="is-primary" @click="register()" :disabled="!username || isRegistered">Register</b-button>
-    <b-button type="is-primary" @click="login()" :disabled="!isRegistered">Sign In</b-button>
+    <b-button type="is-primary" @click="register()">Register</b-button>
+    <b-button type="is-primary" @click="login()">Sign In</b-button>
     <pre style="text-align:left">{{response}}</pre>
   </div>
 </main>
