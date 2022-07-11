@@ -16,6 +16,12 @@ F. A. Q.
 
 **No.** Your fingerprint, face or other biometrics never leaves your device. 
 
+### How does it work? 
+
+It relies on [asymetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
+Upon registration, a cryptographic key pair is generated. 
+The public key is sent to the server and the private key kept on the device, protected by biometrics. 
+
 ### Is it more secure than passwords? 
 
 **Yes.** It is basically a two factor authentication in a single step. 
