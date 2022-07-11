@@ -57,7 +57,7 @@
       async register() {
         let res = await register(this.username)
         this.$buefy.toast.open({
-            message: 'Registered!',
+            message: '(fake) Registered!',
             type: 'is-success'
         })
 
@@ -74,7 +74,7 @@
 
         this.isAuthenticated = true;
         this.$buefy.toast.open({
-            message: 'Signed in!',
+            message: '(fake) Signed in!',
             type: 'is-success'
         })
       },
