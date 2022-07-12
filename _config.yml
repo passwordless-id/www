@@ -1,5 +1,5 @@
-remote_theme: daattali/beautiful-jekyll
-#remote_theme: just-the-docs/just-the-docs
+#remote_theme: daattali/beautiful-jekyll
+remote_theme: just-the-docs/just-the-docs
 
 title: Passwordless
 
@@ -9,7 +9,7 @@ navbar-links:
   Usage: usage
   Webauthn Guide:
     - Introduction: webauthn/1_introduction
-    - Regsitration: webauthn/2_registration
+    - Registration: webauthn/2_registration
     - Authentication: webauthn/3_authentication
     - Security & Privacy: security
   Thoughts: 

@@ -21,6 +21,9 @@
     <b-field>
       <b-input v-model="username" placeholder="Username or E-Mail" @input="checkIsRegistered()"></b-input>
     </b-field>
+    <b-field>
+      <b-checkbox v-model="isExternal">Use extern authenticator</b-checkbox>
+    </b-field>
     <div>
       <b-button type="is-primary" @click="register()" :disabled="!username || isRegistered">Register</b-button>
       <b-button type="is-primary" @click="login()" :disabled="!isRegistered">Sign In</b-button>
@@ -28,66 +31,16 @@
   </template>
   <template v-if="isAuthenticated">
     <p>{{'Hello ' + username + '!'}}</p>
+    <hr/>
     <div>
       <b-button type="is-primary" @click="logout()">Sign Out</b-button>
     </div>
   </template>
-
 </main>
 
 <script src="https://unpkg.com/vue@2"></script>
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 
-<script src="js/passwordless.js"></script>
-
-<script>
-
-  const app = new Vue({
-    el: '#app',
-    data: {
-      username: null,
-      isRegistered: false,
-      isAuthenticated: false
-    },
-    methods: {
-      async checkIsRegistered() {
-        console.log(this.username + ' => ' + !!window.localStorage.getItem(this.username))
-        this.isRegistered = !!window.localStorage.getItem(this.username)
-      },
-      async register() {
-        let res = await register(this.username)
-        this.$buefy.toast.open({
-            message: '(fake) Registered!',
-            type: 'is-success'
-        })
-
-        console.log(res)
-
-        this.isAuthenticated = true;
-        window.localStorage.setItem(this.username, res.credential.id)
-        await this.checkIsRegistered()
-      },
-      async login() {
-        let credentialId = window.localStorage.getItem(this.username)
-        let res = await login(this.username, [credentialId])
-        console.log(res)
-
-        this.isAuthenticated = true;
-        this.$buefy.toast.open({
-            message: '(fake) Signed in!',
-            type: 'is-success'
-        })
-      },
-      async logout() {
-        this.isAuthenticated = false;
-        this.$buefy.toast.open({
-            message: 'Signed out!',
-            type: 'is-success'
-        })
-
-      }
-    }
-  })
-</script>
+<script type="module" src="js/demo.js"></script>
 </body>
 </html>

@@ -16,20 +16,28 @@ F. A. Q.
 
 **No.** Your fingerprint, face or other biometrics never leaves your device. 
 
-### How does it work? 
+### Then how does it work? 
 
 It relies on [asymetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
 Upon registration, a cryptographic key pair is generated. 
-The public key is sent to the server and the private key kept on the device, protected by biometrics. 
+The public key is sent to the server 
+and the private key kept on the device, protected by biometrics.
+Both keys are useless on their own, but can be used in combination to prove authenticity.
+Please check out the webauthn guide for more details about the technical side of the protocol.
 
 ### Is it more secure than passwords? 
 
-**Yes.** It is basically a two factor authentication in a single step. 
+**Yes.** It is basically a two-factor authentication in a single step. 
 
-- the first factor is something you have. 
+- The first factor is something you have. 
 The authentication only works on devices previously registered. 
-- the second factor is something you are. 
-A biometric check is used to verify it is you. 
+- The second factor is something you are. 
+A biometric check is used to verify it is you.
+
+Moreover:
+
+- It protects against phishing (article coming soon)
+- The cryptographic keys are never exposed (article coming soon)
 
 ### What if my device is stolen? 
 
