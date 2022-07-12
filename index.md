@@ -5,7 +5,7 @@ Passwordless
 
 ![img](img/54dc6e5b-f393-4135-b8e3-9143aa82290a.jpg)
 
-<iframe src="form.html" style="width:100%;height:200px;border:none;"></iframe>
+<iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe>
 
 > Disclaimer: this demo only stores information locally on your device, it does not send *anything* remotely.
 
@@ -22,7 +22,7 @@ It relies on [asymetric cryptography](https://en.m.wikipedia.org/wiki/Public-key
 Upon registration, a cryptographic key pair is generated. 
 The public key is sent to the server 
 and the private key kept on the device, protected by biometrics.
-Both keys are useless on their own, but can be used in combination to prove authenticity.
+Both keys are useless on their own, but can be used in combination to authenticate oneself.
 Please check out the webauthn guide for more details about the technical side of the protocol.
 
 ### Is it more secure than passwords? 
