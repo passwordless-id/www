@@ -51,12 +51,13 @@ In this case, it is important to remove that device from the list of authorized 
 What is this website about?
 ---------------------------
 
-Currently, this is just a demo, a few guides, tips and resources.
+Currently, this is just a demo, a few guides, tips and resources about the recent webauthn protocol.
 
-In the future, "Passwordless" is planned to become a free public webservice to let:
+In the future, "Passwordless" is planned to become a "universal authentication platform".
+A free public webservice to let:
 
 - any user register/authenticate
-- any webservice/app know who the user is (provided the user allows it)
+- any app/service know who the user is (provided the user allows it)
 
 The goals are multiple.
 Make the web a safer place,
