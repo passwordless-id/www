@@ -17,6 +17,9 @@
 
 <body>
 <main id="app" class="section container">
+  <b-tag>Please note: this is a demo. Nothing is stored server side.</b-tag>
+  <br/>
+  <br/>
   <template v-if="!isAuthenticated">
     <b-field>
       <b-input v-model="username" placeholder="Username or E-Mail" @input="checkIsRegistered()"></b-input>

@@ -7,7 +7,7 @@ Passwordless
 
 <iframe src="form.html" style="width:100%;height:200px;border:none;"></iframe>
 
-> Disclaimer: this demo solely triggers the webauthn protocol client side. It does not store any information, nor validates anything.
+> Disclaimer: this demo only stores information locally on your device, it does not send *anything* remotely.
 
 F. A. Q. 
 -----
