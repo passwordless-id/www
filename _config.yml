@@ -6,12 +6,13 @@ title: Passwordless
 author: Arnaud Dagnelies
 
 navbar-links:
-  Usage: usage
+  Usage:
+    - Introduction: usage/1_introduction
   Webauthn Guide:
     - Introduction: webauthn/1_introduction
     - Registration: webauthn/2_registration
-    - Authentication: webauthn/3_authentication
-    - Security & Privacy: security
+    - Authentication: webauthn/3_login
+    - Security & Privacy: webauthn/4_security
   Thoughts: 
     - E-Mails vs Usernames: thoughts/emails-vs-usernames
     - User Guidance: thoughts/guidance

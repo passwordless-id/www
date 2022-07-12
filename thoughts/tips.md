@@ -3,12 +3,13 @@ The big picture
 ---------------
 
 Keep in mind that the protocol is not trivial and that the whole system around must be sound.
-It requires that all aspects are correctly implemented in order for the whole to be secure.
+A simple verification of the payloads is not enough.
+All flows and security aspects must be correctly understood and implemented in order to ensure a secure system.
 
 This includes mainly:
 
 - proper "flow"
-- proper random challenges and verifications
+- proper random challenges
 - proper validation of signatures and payloads on server side
 - the ability to manage multiple device bound credentials per user
 
