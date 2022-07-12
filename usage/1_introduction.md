@@ -1,5 +1,5 @@
 Usage (Planned)
-=====
+===============
 
 This authentication platform can be used in three possible ways.
 From the simplest out-of-the-box to a fully customized experience.
@@ -9,12 +9,9 @@ Direct
 
 This is the simplest method, using redirects. It simply requires your website to redirect to this platform to let the user authenticate.
 Once the user registered or signed in, you will be redirected back to your website.
-There, a simple `GET /profile` is enough to get the user's profile.
-If you want a proof of authentication for the server side, you can call `GET /token` to obtain it.
-This token holds the proof of the user's session authenticity and can be validated on the server side in various ways.
+There, a simple `GET /user` is enough to get the user's profile.
 
-This can be done in literally 5 minutes.
-
+![Usage](usage.svg)
 
 Embedded
 --------
