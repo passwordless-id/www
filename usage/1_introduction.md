@@ -1,4 +1,4 @@
-Usage
+Usage (Planned)
 =====
 
 This authentication platform can be used in three possible ways.

@@ -100,3 +100,11 @@ The provided object is a [PublicKeyCredentialCreationOptions](https://w3c.github
     };
 
 Required parameters:
+
+
+Validating the data
+-------------------
+
+
+![attestation](img/attestation.png)
+(from https://w3c.github.io/webauthn/#sctn-attestation)
