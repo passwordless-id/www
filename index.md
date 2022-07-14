@@ -3,7 +3,7 @@ Passwordless
 
 > Less passwords, more security!
 
-![img](img/54dc6e5b-f393-4135-b8e3-9143aa82290a.jpg)
+![Banner](img/biometric_banner.svg)
 
 <iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe>
 
