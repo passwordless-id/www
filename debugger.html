@@ -4,19 +4,67 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
-  <style>
-    main.container {
-      max-width: 400px !important;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
 <main id="app" class="section container">
-  <b-field>
-    <b-input v-model="username" placeholder="Username or E-Mail" @input="checkIsRegistered()"></b-input>
+  <b-field label="rp.id">
+    <b-input v-model="rp.id" placeholder="window.location.hostname" ></b-input>
   </b-field>
+
+  <b-field label="rp.name">
+    <b-input v-model="rp.name" placeholder="Name of your App/Service/Website" ></b-input>
+  </b-field>
+
+  <b-field label="user.id" required>
+    <b-input v-model="user.id" placeholder="Some anonymized id" ></b-input>
+  </b-field>
+
+  <b-field label="user.name" required>
+    <b-input v-model="user.name" placeholder="Username or E-Mail" ></b-input>
+  </b-field>
+
+  <b-field label="user.displayName" required>
+    <b-input v-model="user.displayName" placeholder="John Doe" ></b-input>
+  </b-field>
+
+  <b-field label="challenge" required>
+    <b-input v-model="challenge" placeholder="Some random stuff" ></b-input>
+  </b-field>
+
+
+  <b-field label="pubKeyCredParams" required>
+    <b-taginput v-model="pubKeyCredParams" placeholder="Some random stuff" ></b-taginput>
+  </b-field>
+
+  <b-field label="timeout" required>
+    <b-taginput v-model="timeout" placeholder="Some random stuff" ></b-taginput>
+  </b-field>
+
+  excludeCredentials: [
+  +
+  {
+  type: 'public-key',
+  id:
+  Upload (binary)
+  transports: [ USBNFCBLE
+  ]
+  }
+  ]
+  authenticatorSelection: {
+  authenticatorAttachment:
+
+  cross-platform
+  requireResidentKey
+  userVerification:
+
+  preferred
+  }
+  attestation:
+
+  none
+  }
+  });
   <div>
     <b-button type="is-primary" @click="register()">Register</b-button>
     <b-button type="is-primary" @click="login()">Sign In</b-button>
@@ -28,36 +76,15 @@
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
 
 <script src='https://unpkg.com/cbor-web'></script>
-<script src="js/passwordless.js"></script>
+<!--script type="module" src="js/passwordless.js"></script-->
 
 <script>
 
   const app = new Vue({
     el: '#app',
     data: {
-      username: null,
-      response: null,
-      isRegistered: false,
-    },
-    methods: {
-      async checkIsRegistered() {
-        console.log(this.username + ' => ' + !!window.localStorage.getItem(this.username))
-        this.isRegistered = !!window.localStorage.getItem(this.username)
-      },
-      async register() {
-        let res = await register(this.username)
-        console.log(res)
-        this.response = res
-
-        window.localStorage.setItem(this.username, res.credential.id)
-        await this.checkIsRegistered()
-      },
-      async login() {
-        let credentialId = window.localStorage.getItem(this.username)
-
-        let res = await login(this.username, [credentialId])
-        console.log(res)
-        this.response = res
+      rp: {
+        id: null
       }
     }
   })

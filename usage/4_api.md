@@ -12,18 +12,18 @@ Registration
 A new user comes to your website and wants to register its device.
 
     POST /register
-        {"email":...}
+        {"email":..., "confirmUrl": ...}
 
 When invoking this endpoint, an e-mail will be sent to the user containing a link with a challenge.
 
-    GET /confirm?challenge=...
+    {{confirm-url}}#challenge={{challenge}}
 
-> This page *might* request further verifications like SMS/QA/password/other device confirmation...
 
 Once verified, it triggers the device authentication and the creation of credentials which will be sent using:
 
     POST /add-device
-        {"email"..., "challenge": ..., public Key:..., publicKeyAlgo:..., }
+        {"email"..., "challenge": ..., "publicKey":..., "publicKeyAlgo":..., }
+
 
 Authentication
 --------------

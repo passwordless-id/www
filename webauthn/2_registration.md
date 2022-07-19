@@ -1,6 +1,8 @@
 Registration
 ============
 
+{:toc}
+
 Example
 -------
 
@@ -33,7 +35,7 @@ If you run this snippet, a browser specific popup should appear and will ask to 
 
 Depending on your case, you might use the device directly, your smartphone nearby, or some security key to proove your identity using it.
 
-How exactly you prooe your identity depends on the device capabilities, the OS, the browser... At some point, you will to either use some biometric or PIN on the device. This device is then called the "authenticator" and will produce a cryptographic private/public key pair.
+How exactly you prove your identity depends on the device capabilities, the OS, the browser... At some point, you will to either use some biometric or PIN on the device. This device is then called the "authenticator" and will produce a cryptographic private/public key pair.
 
 The private key will be kept secret, stored on the device and protected by your biometric or PIN code. The public key will ulimately be sent to the server so that it can authentify you next time.
 
@@ -52,7 +54,62 @@ PublicKeyCredential {
 }
 ```
 
+This is also an object with additional methods.
+Most notably, the most important pieces of information are:
+
+- `registration.id`: The id of the key pair
+- `registration.response.getPublicKeyAlgorithm()`: An integer representing the signing algorithm
+- `registration.response.getPublicKey()`: An "ArrayBuffer" representing the public key
+
 To see how a "partly decoded" object looks like, I advise the [webauthn debugger](https://webauthn.me/debugger)
+
+    "rawId": "96315fc2ea397d6be497190b1bfecbc6b0841411798a2fbeddffc79682c07e73",
+    "id": "ljFfwuo5fWvklxkLG_7LxrCEFBF5ii--3f_HloLAfnM",
+    "type": "public-key",
+    "response": {
+        "clientDataJSON": {
+          "type": "webauthn.create",
+          "challenge": "Dx9AmkuTB-8bnqwcf-yJw1FFUVKRubXJQJt-zwyF3Io",
+          "origin": "https://webauthn.me",
+          "crossOrigin": false
+        }
+        attestationObject: {
+          "fmt": "none",
+          "attStmt": {},
+          "authData": {
+            "rpIdHash": "f95bc73828ee21f9fd3bbe72d97908013b0a3759e9aea3dae318766cd2e1ad",
+            "flags": {
+              "userPresent": true,
+              "reserved1": false,
+              "userVerified": true,
+              "reserved2": "0",
+              "attestedCredentialData": true,
+              "extensionDataIncluded": false
+            },
+            "signCount": 0,
+            "attestedCredentialData": {
+              "aaguid": "0000000000000000",
+              "credentialIdLength": 32,
+              "credentialId": "96315fc2ea397d6be49719b1bfecbc6b0841411798a2fbeddffc79682c07e73",
+              "credentialPublicKey": Download COSEDownload JWKDownload PEM {
+                "kty": "RSA",
+                "alg": "RSASSA-PKCS1-v1_5_w_SHA256",
+                "n": "nej5Mk1AXDOUmETMPyy/b75p1+AxrHPO1yDyS8sirUhya86XjU5hcXFAR0/nmNEHaBhpZWpHm2Ni7YUiUJt2/al1ESiq48IrVlbJn7vQqPj/L9Jr/8ZDIlutN9JbTzEsf/6xh5lnWI3A68sFg3rld0Dx0f0rk2HKGsO8iUMLsqzI2Fqnh0wGGgPFsyBMZYnH7orBD8Ok1aFz8tXyUqda5bHURcA8vI/yoOuHAIyAuRJDtkgyNCk+xxIlAitVeIqcjjT9NFiXGxQrJZIsZafkLK6DVCT+XkpSMJXv1+nwPV4zlT9drVv6zNsDLFtty0Je1jWx82QPAXmlhcoo0WqUxw==",
+                "e": "AQAB"
+              }
+            }
+          }
+        }
+    }
+
+This is just to give you a feeling of the response.
+In particular, the *attestation* part is even more complex since its format and content are vendor-specific.
+
+- `decode(cred.response.getAuthenticatorData()).attestedCredentialData.aaguid`: The authenticator ID
+    - Only available if attestation was required
+    - List of authenticators https://fidoalliance.org/metadata/
+
+
 
 The flow
 --------
