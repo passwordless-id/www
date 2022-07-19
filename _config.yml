@@ -9,6 +9,7 @@ author: Arnaud Dagnelies
 navbar-links:
   Usage:
     - Introduction: usage/1_introduction
+    - JS Helper library: usage/2_js
   Webauthn Guide:
     - Introduction: webauthn/1_introduction
     - Registration: webauthn/2_registration

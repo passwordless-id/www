@@ -1,5 +1,16 @@
-Usage (Planned)
-===============
+Usage
+=====
+
+This is based on five components:
+
+- a JS helper library
+- a Java helper library
+- a REST API
+- a frontend UI
+- an out-of-the-box authentication service
+ 
+Service Usage (planned)
+=======================
 
 This authentication platform can be used in three possible ways.
 From the simplest out-of-the-box to a fully customized experience.
