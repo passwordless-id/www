@@ -102,6 +102,9 @@ To see how a "partly decoded" object looks like, I advise the [webauthn debugger
         }
     }
 
+The credential ID is identified by `id` (base64url encoded) and `rawId` (raw byte buffer).
+They are just two representations of the same value: `id === base64url(rawId)`.
+
 This is just to give you a feeling of the response.
 In particular, the *attestation* part is even more complex since its format and content are vendor-specific.
 
@@ -128,32 +131,32 @@ The provided object is a [PublicKeyCredentialCreationOptions](https://w3c.github
     let publicKeyCredentialCreationOptions = {
         "rp":{
           "id": "login.example.com", // The domain name (the default) or a suffix of it (without port) in case the credential should be used for multiple subdomains.
-          "name":"ACME Corporation" // (*) For example, "ACME Corporation", "Wonderful Widgets, Inc." or "ОАО Примертех".
+          "name":"ACME Corporation" // (*required) For example, "ACME Corporation", "Wonderful Widgets, Inc." or "ОАО Примертех".
         },
         "user": {
-            "id": buffer("rand0m..."), // (*) A user handle is an opaque byte sequence with a maximum size of 64 bytes, and is not meant to be displayed to the user.
-            "name": "alexm", // (*) A human-palatable identifier for a user account. It is intended only for display, i.e., aiding the user in determining the difference between user accounts with similar displayNames. For example, "alexm", "alex.mueller@example.com" or "+14255551234".
-            "displayName": "Alex Müller" // (*) A human-palatable name for the user account, intended only for display. For example, "Alex Müller" or "田中倫". 
+            "id": buffer("rand0m..."), // (*required) A user handle is an opaque byte sequence with a maximum size of 64 bytes, and is not meant to be displayed to the user.
+            "name": "alexm", // (*required) A human-palatable identifier for a user account. It is intended only for display, i.e., aiding the user in determining the difference between user accounts with similar displayNames. For example, "alexm", "alex.mueller@example.com" or "+14255551234".
+            "displayName": "Alex Müller" // (*required) A human-palatable name for the user account, intended only for display. For example, "Alex Müller" or "田中倫". 
         },
-        "challenge": buffer("rand0m..."),
+        "challenge": buffer("rand0m..."), // (*required)
         "pubKeyCredParams": [{
             "alg": -257,
             "type": "public-key"
         }]
         "timeout": 60000,
         "excludeCredentials": [{
-            required DOMString                    type;
-            required BufferSource                 id;
-            sequence<DOMString>                   transports;
+            "type": "public-key",
+            "id": buffer("ljFfwuo5fWvklxkLG..."),
+            "transports": [""]
         }],
         "authenticatorSelection": {
-            authenticatorAttachment: "platform"|"cross-platform",
-            DOMString                    residentKey;
-            boolean                      requireResidentKey = false;
-            DOMString                    userVerification = "preferred"; // "required", "preferred", "discouraged"
+            "authenticatorAttachment": "platform" // or "cross-platform",
+            "residentKey": "deprecated?",
+            "requireResidentKey": false,
+            "userVerification": "preferred" // or "required", "preferred", "discouraged"
         }
-        DOMString                                    attestation = "none";
-        AuthenticationExtensionsClientInputs         extensions;
+        "attestation": "none", // or "direct", "indirect"
+        "extensions": {}
     };
 
 Required parameters:
@@ -162,6 +165,42 @@ Required parameters:
 Validating the data
 -------------------
 
+The validation procedure is described [here](https://w3c.github.io/webauthn/#sctn-registering-a-new-credential)
+in a currently **26 steps procedure**.
+
+> This is quite ironic since none(*) of the data received is signed.
+> It is also trivial for the client to manipulate the data in the absence of a signature.
+> (*) The only thing that possess a signature is the *attestation*.
+> However, it is not even guaranteed to be provided, like for Apple devices and apparently also google passkeys.
+> So, basically, all the information you receive is taken in good faith.
+> It is more a format validation than anything.
+
+Since no signature is present, the need to validate the data is questionable.
+
+What you will need though is the following:
+
+- verify the challenge matches
+- add the id, publicKey and publicKeyAlgo to the list of the user's trusted credentials
+
+
+The attestation
+---------------
+
+The attestation can be used to identify the device model and its authenticity.
+This is useful in high-security contexts for example,
+where you want to restrict access to certain devices models only.
+
+It is also not guaranteed to be provided by all authenticators. 
+For example Apple devices and Google passkeys do not provide attestation at all.
+
+The attestation is represented by the following binary CBOR (Compact Binary Object Representation) encoded structure.
 
 ![attestation](img/attestation.png)
 (from https://w3c.github.io/webauthn/#sctn-attestation)
+
+Attestation verification is also *hard*. 
+Not only is the attestation statement encoded in an unusual format, it also differs from vendor to vendor.
+Lastly, you will have to also validate the certificate chains, 
+which are not always public,
+so you might need to contact the security key manufacturers to even properly do this.
+

@@ -1,3 +1,6 @@
+/********************************
+     Encoding/Decoding Utils
+********************************/
 function randomString() {
     return "fake-id-" + Math.random().toString(36).substr(2)
 }
@@ -23,6 +26,9 @@ function parseBase64url(txt) {
 }
 
 
+/********************************
+       Attestation Decoder
+********************************/
 function parseAttestation(attestationObject) {
     if(!window.cbor)
         return null
@@ -65,12 +71,23 @@ function parseAttestation(attestationObject) {
     }
 }
 
+
+
+export function isAvailable() {
+    return !!window.PublicKeyCredential
+}
+
+export async function isLocal() {
+    return await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
+}
+
+
+
 async function getAuthType(isExternal) {
     if(isExternal)
         return "cross-platform"
     try {
-        let available = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
-        if(available)
+        if(await isLocal())
             return "platform"
         else
             return "cross-platform"
@@ -80,6 +97,8 @@ async function getAuthType(isExternal) {
         return null
     }
 }
+
+
 
 // given a string challenge, the base64 encoded version will be signed
 export async function register(username, options) {
@@ -102,7 +121,7 @@ export async function register(username, options) {
             {alg: -7, type: "public-key"},   // ES-256 (Webauthn's default algorithm)
             {alg: -257, type: "public-key"}, // RS-256 (for Windows Hello and many others)
         ],
-        //timeout: 60000,
+        timeout: 60000,
         authenticatorSelection: {
             userVerification: "required",
             authenticatorAttachment: await getAuthType(options.isExternal),
@@ -127,6 +146,8 @@ export async function register(username, options) {
         }
     }
 }
+
+
 
 // given a string challenge, the base64 encoded version will be signed
 export async function login(username, credentialIds) {

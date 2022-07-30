@@ -35,8 +35,8 @@ let cred = await passwordless.signUp({
 Optional parameters include:
 
 - `useExternDevice: true`: Set this flag to `true` to use an extern authentication device.
-- `excludeCredentials: ["credentialId1", "credentialId2"]`: this can be used to
-- `timeout: 60000`: in milliseconds
+- `excludeCredentials: ["credentialId1", "credentialId2"]`: this can be used to avoid re-registering key pairs that already exist.
+- `timeout: 60000`: in milliseconds (1 minute by default)
 - `attestation: true`: adds a device "attestation" to the result.
 
 The result will be as follows.
@@ -53,9 +53,9 @@ The result will be as follows.
 }
 ```
 
-(*) The *attestation* can be used to prove the authenticity of the authenticator model and flags (like userVerified).
-This is only part of the response if the parameter `attestation: true` was used.
-Please also note that the attestation may not bc available on all platforms, like apple.
+> (*) The *attestation* is a complex structure that can be used to identify the device model and prove its authenticity.
+> There is a nice article [here](https://medium.com/webauthnworks/webauthn-fido2-demystifying-attestation-and-mds-efc3b3cb3651) describing it in more details.
+> This is typically used in high-security contexts, where the relying party wants to control which device models are allowed. 
 
 
 Authentication
@@ -78,16 +78,38 @@ The result will be as follows.
 
 ```json
 {
+  "challenge": "random-string-from-server",
+  "username": "Johny",
   "credentialId": "B9mTcFSck2LzJO...",
-  "signature": "9abaf3d0ea737...",
-  "userHash": "SHA256 of username",
-  "clientDataRaw": "base64 encoded raw JSON of clientData",
-  "clientData": {
-        "type": "webauthn.get",
-        "challenge": "tV8VrRgHF2su...",
-        "origin": "https://...",
-        "crossOrigin": false
-      }
-    }
+  "clientData": "base64 encoded JSON (*)",
+  "signature": "9abaf3d0ea737..."
 }
 ```
+
+The `clientData` contains a UTF-8 JSON string encoded in base64. Once decoded, it has the following structure.
+
+```json
+{
+  "type": "webauthn.get",
+  "challenge": "tV8VrRgHF2su...",
+  "origin": "https://...",
+  "crossOrigin": false
+}
+```
+
+
+
+Server side validation
+----------------------
+
+In order to confirm the validity of the response server side, the following steps must be applied.
+
+- ensure the `challenge`, `username` match the expected ones
+- ensure the `credentialId` belongs to `username`
+- load the corresponding `publicKey` and `publicKeyAlgo` stored during registration
+- ensure the `signature` of `clientData` is valid
+- ensure the content of the decoded `clientData` is correct
+  - `type` is always `"webauthn.get"`
+  - `challenge` must match
+  - `origin` must match
+  - `crossOrigin` must match according to use case
