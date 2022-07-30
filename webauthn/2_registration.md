@@ -1,6 +1,7 @@
 Registration
 ============
 
+* Table of Content
 {:toc}
 
 Example
