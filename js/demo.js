@@ -14,7 +14,7 @@ import * as passwordless from './passwordless.js'
         this.isRegistered = !!window.localStorage.getItem(this.username)
       },
       async register() {
-        let res = await passwordless.register(this.username, {isExternal: this.isExternal})
+        let res = await passwordless.register(this.username, window.crypto.randomUUID(),{authType: this.isExternal ? 'extern' : 'auto'})
         this.$buefy.toast.open({
             message: 'Registered!',
             type: 'is-success'
@@ -28,7 +28,7 @@ import * as passwordless from './passwordless.js'
       },
       async login() {
         let credentialId = window.localStorage.getItem(this.username)
-        let res = await passwordless.login(this.username, [credentialId], {isExternal: this.isExternal})
+        let res = await passwordless.login([credentialId], window.crypto.randomUUID(), {isExternal: this.isExternal})
         console.log(res)
 
         this.isAuthenticated = true;

@@ -4,90 +4,177 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+  <style>
+    label.required::after {
+        content: "*";
+        color: red;
+    }
+
+    .field .field {
+      flex-basis: 0;
+    }
+
+    .hint {
+      color: #777;
+      opacity: 0.7;
+    }
+    .field:hover .hint {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
 <main id="app" class="section container">
-  <b-field label="rp.id">
-    <b-input v-model="rp.id" placeholder="window.location.hostname" ></b-input>
+  <b-tag>Please note: this is a demo. Nothing is stored server side.</b-tag>
+  <br/>
+  <br/>
+  <h3 class="title">Registration</h3>
+
+    <b-field label="Username" horizontal custom-class="required">
+      <b-input v-model="registration.username" placeholder="Username or E-Mail"></b-input>
+      <div></div>
+    </b-field>
+
+    <b-field label="Challenge" horizontal  custom-class="required">
+      <b-field>
+        <b-input v-model="registration.challenge" placeholder="Challenge" expanded></b-input>
+        <p class="control">
+          <b-button type="is-primary" label="&#x21bb;" @click="registration.challenge = newChallenge()" />
+        </p>
+      </b-field>
+      <div class="hint">A server-side randomly generated string.</div>
+    </b-field>
+
+    <hr/>
+
+    <b-field label="authenticatorType" horizontal>
+      <b-select v-model="registration.options.authenticatorType" expanded>
+        <option>auto</option>
+        <option>local</option>
+        <option>extern</option>
+        <option>both</option>
+      </b-select>
+      <div class="hint">Which device to use as authenticator.</div>
+    </b-field>
+
+    <b-field label="Timeout" horizontal>
+      <b-input v-model="registration.options.timeout" placeholder="60000" expanded></b-input>
+      <div class="hint">Number of milliseconds the user has to respond to the biometric/PIN check.</div>
+    </b-field>
+
+    <b-field label="userVerification" horizontal>
+      <b-select v-model="registration.options.userVerification" expanded>
+        <option>required</option>
+        <option>preferred</option>
+        <option>discouraged</option>
+      </b-select>
+      <div class="hint">Whether to prompt for biometric/PIN check or not.</div>
+    </b-field>
+
+    <b-field label="attestation" horizontal>
+      <b-checkbox v-model="registration.options.attestation" expanded></b-checkbox>
+      <div class="hint">
+        <p>If enabled, the device attestation and clientData will be provided as base64 encoded binary data. Not available on some platforms.</p>
+      </div>
+    </b-field>
+
+    <hr/>
+
+    <pre>passwordless.register("{{registration.username}}", "{{registration.challenge}}", {{registration.options}})</pre>
+
+    <b-button type="is-primary" @click="register()">Register device</b-button>
+
+    <pre>{{registration.result}}</pre>
+
+    <hr/>
+
+    <h3 class="title">Login</h3>
+
+  <b-field label="Credential ID" horizontal custom-class="required">
+    <b-input v-model="authentication.credentialId" placeholder="Credential ID"></b-input>
+    <div></div>
   </b-field>
 
-  <b-field label="rp.name">
-    <b-input v-model="rp.name" placeholder="Name of your App/Service/Website" ></b-input>
+  <b-field label="Challenge" horizontal  custom-class="required">
+    <b-input v-model="authentication.challenge" placeholder="Challenge"></b-input>
+    <div class="hint">A server-side randomly generated string, the base64 encoded version will be signed.</div>
   </b-field>
 
-  <b-field label="user.id" required>
-    <b-input v-model="user.id" placeholder="Some anonymized id" ></b-input>
+  <b-field label="Timeout" horizontal>
+    <b-input v-model="authentication.options.timeout" placeholder="60000" expanded></b-input>
+    <div class="hint">Number of milliseconds the user has to respond to the biometric/PIN check.</div>
   </b-field>
 
-  <b-field label="user.name" required>
-    <b-input v-model="user.name" placeholder="Username or E-Mail" ></b-input>
+  <b-field label="UserVerification" horizontal>
+    <b-select v-model="authentication.options.userVerification" expanded>
+      <option>required</option>
+      <option>preferred</option>
+      <option>discouraged</option>
+    </b-select>
+    <div class="hint">Whether to prompt for biometric/PIN check or not.</div>
   </b-field>
 
-  <b-field label="user.displayName" required>
-    <b-input v-model="user.displayName" placeholder="John Doe" ></b-input>
+  <pre>passwordless.login(["{{authentication.credentialId}}"], "{{authentication.challenge}}", {{authentication.options}})</pre>
+
+    <b-button type="is-primary" @click="login()">Login</b-button>
+
+    <pre>{{authentication.result}}</pre>
+
+
+
+  <hr/>
+
+  <h3 class="title">Verification</h3>
+
+  <b-field label="Algorithm" horizontal>
+    <b-select v-model="verification.algorithm" expanded>
+      <option>RS256</option>
+      <option>ES256</option>
+    </b-select>
+    <div class="hint">The algorithm used for the public key created during registration.</div>
   </b-field>
 
-  <b-field label="challenge" required>
-    <b-input v-model="challenge" placeholder="Some random stuff" ></b-input>
+  <b-field label="PublicKey" horizontal>
+    <b-input v-model="verification.publicKey" type="textarea"></b-input>
+    <div class="hint">The public key created during registration.</div>
   </b-field>
 
+  <hr/>
 
-  <b-field label="pubKeyCredParams" required>
-    <b-taginput v-model="pubKeyCredParams" placeholder="Some random stuff" ></b-taginput>
+  <b-field label="AuthenticatorData" horizontal>
+    <b-input v-model="verification.authenticatorData" type="textarea"></b-input>
+    <div class="hint"></div>
   </b-field>
 
-  <b-field label="timeout" required>
-    <b-taginput v-model="timeout" placeholder="Some random stuff" ></b-taginput>
+  <b-field label="ClientData" horizontal>
+    <b-input v-model="verification.clientData" type="textarea"></b-input>
+    <div class="hint"></div>
   </b-field>
 
-  excludeCredentials: [
-  +
-  {
-  type: 'public-key',
-  id:
-  Upload (binary)
-  transports: [ USBNFCBLE
-  ]
-  }
-  ]
-  authenticatorSelection: {
-  authenticatorAttachment:
+  <b-field label="Signature" horizontal>
+    <b-input v-model="verification.signature" type="textarea"></b-input>
+    <div class="hint">
+      <p>signature = sign(algorithm, publicKey, authenticatorData + sha256(clientData))</p>
+    </div>
+  </b-field>
 
-  cross-platform
-  requireResidentKey
-  userVerification:
+  <b-field horizontal>
+    <b-button @click="verifySignature()">Verify</b-button>
+  </b-field>
 
-  preferred
-  }
-  attestation:
-
-  none
-  }
-  });
-  <div>
-    <b-button type="is-primary" @click="register()">Register</b-button>
-    <b-button type="is-primary" @click="login()">Sign In</b-button>
-    <pre style="text-align:left">{{response}}</pre>
+  <div class="message" :class="{'is-success': verification.isValid, 'is-danger': !verification.isValid}" v-if="verification.isValid !== null">
+    <div class="message-body">
+      {{verification.isValid ? 'Valid' : 'Invalid'}} signature
+    </div>
   </div>
+
 </main>
 
 <script src="https://unpkg.com/vue@2"></script>
 <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-<script src='https://unpkg.com/cbor-web'></script>
-<!--script type="module" src="js/passwordless.js"></script-->
-
-<script>
-
-  const app = new Vue({
-    el: '#app',
-    data: {
-      rp: {
-        id: null
-      }
-    }
-  })
-</script>
+<script type="module" src="js/debugger.js"></script>
 </body>
 </html>

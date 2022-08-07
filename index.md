@@ -15,7 +15,8 @@ F.A.Q.
 ### Is my fingerprint/face sent to the server? 
 
 **No.** Your fingerprint, face or other biometrics never leaves your device.
-The biometric verification is a local security constraint to create and access so-called "passkeys" on your device.
+The biometric verification is a security constraint that occurs locally on your device
+to create and access security keys (similar to large random passwords).
 
 ### How does it work exactly? 
 
