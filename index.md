@@ -3,7 +3,7 @@ Passwordless
 
 > Less passwords, more security!
 
-![Banner](img/biometric_banner.svg)
+![Banner](img/biometric_banner.png)
 
 <iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe>
 
@@ -47,6 +47,7 @@ If your device is stolen and the thief can unlock it (for example if the pattern
 then the thief has full control over your phone and could possibly also impersonate you.
 In this case, it is important to remove that device from the list of authorized devices.
 
+
 ---
 
 What is this website about?
@@ -64,6 +65,8 @@ The goals are multiple.
 Make the web a safer place,
 make it easier for developers,
 make it more comfortable for users.
+
+---
 
 It's work in progress ;)
 ------------------------
