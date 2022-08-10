@@ -37,22 +37,48 @@ import * as passwordless from './passwordless.js'
             return window.crypto.randomUUID()
         },
         async register() {
-            let res = await passwordless.register(this.registration.username, this.registration.challenge, this.registration.options)
-            this.$buefy.toast.open({
-                message: 'Registered!',
-                type: 'is-success'
-            })
-            console.log(res)
-            this.registration.result = res
-            this.authentication.credentialId = res.credential.id
+            try {
+                let res = await passwordless.register(this.registration.username, this.registration.challenge, this.registration.options)
+                this.$buefy.toast.open({
+                    message: 'Registered!',
+                    type: 'is-success'
+                })
+                console.log(res)
+                this.registration.result = res
+                this.authentication.credentialId = res.credential.id
+            }
+            catch(e) {
+                this.$buefy.toast.open({
+                    message: e,
+                    type: 'is-danger'
+                })
+            }
         },
         async login() {
-            let res = await passwordless.login([this.authentication.credentialId], this.authentication.challenge, this.authentication.options)
-            console.log(res)
-            this.authentication.result = res
+            try {
+                let res = await passwordless.login([this.authentication.credentialId], this.authentication.challenge, this.authentication.options)
+                console.log(res)
+                this.authentication.result = res
+            }
+            catch(e) {
+                this.$buefy.toast.open({
+                    message: e,
+                    type: 'is-danger'
+                })
+                this.authentication.result = {}
+            }
         },
         async verifySignature() {
-            this.verification.isValid = await passwordless.verify(this.verification)
+            try {
+                this.verification.isValid = await passwordless.verify(this.verification)
+            }
+            catch(e) {
+                this.$buefy.toast.open({
+                    message: e,
+                    type: 'is-danger'
+                })
+                this.verification.isValid = false
+            }
         }
     }
  })

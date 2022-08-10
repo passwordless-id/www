@@ -336,6 +336,6 @@ export async function verify({algorithm, publicKey, authenticatorData, clientDat
 
     // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify
     let validity = await window.crypto.subtle.verify({name:'RSASSA-PKCS1-v1_5', hash:'SHA-256'}, cryptoKey, parseBase64(signature), comboBuffer)
-    console.debug(validity)
-    return !!validity
+
+    return validity
 }
