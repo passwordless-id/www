@@ -68,5 +68,6 @@ make it more comfortable for users.
 
 ---
 
-It's work in progress ;)
-------------------------
+It is "work in progress" ;)
+---------------------------
+

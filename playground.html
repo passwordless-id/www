@@ -23,16 +23,21 @@
     }
 
     .with-big-icon {
-      margin: 5em 0 1em 0;
+      margin: 5rem 0 1rem 0;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .with-big-icon img {
-      height: 4em;
-      margin: 1em;
+      height: 4rem;
+      margin: 0 1rem;
     }
-
+    .col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     </style>
 </head>
 
@@ -40,10 +45,10 @@
 <main id="app" class="container">
 
     <header class="block has-text-centered">
-        <h1 class="title">Passwordless Inspector</h1>
+        <h1 class="title">Passwordless Playground</h1>
     </header>
 
-    <p>Using this tool, you can experiment with the various parameters of passwordless.js</p>
+    <p>Using this tool, you can experiment with the various parameters of the JS helper library (to be released).</p>
 
     <section>
         <header class="with-big-icon">
@@ -53,7 +58,7 @@
 
         <b-field label="Username" horizontal custom-class="required">
             <b-input v-model="registration.username" placeholder="Username or E-Mail"></b-input>
-            <div></div>
+            <div class="hint">A username, email or other identifier</div>
         </b-field>
 
         <b-field label="Challenge" horizontal custom-class="required">
