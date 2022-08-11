@@ -9,8 +9,8 @@ Passwordless
 
 > Disclaimer: this demo only stores information locally on your device, it does not send *anything* remotely.
 
-F.A.Q. 
-------
+![FAQ](img/icon-faq.svg) F.A.Q. 
+---------------------------------------------
 
 ### Is my fingerprint/face sent to the server? 
 
