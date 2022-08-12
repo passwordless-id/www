@@ -3,7 +3,6 @@ remote_theme: dagnelies/beautiful-jekyll
 #remote_theme: just-the-docs/just-the-docs
 
 title: Passwordless
-description: Passwordless authentication using TouchID or FaceID for everyone. Less passwords, more security!
 
 author: Arnaud Dagnelies
 
