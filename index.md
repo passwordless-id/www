@@ -43,15 +43,17 @@ Moreover:
 
 ### What if my device is lost or stolen? 
 
+Unlike traditional authentication systems with a single password,
+you register multiple access keys, one per device.
+
 If you lose your device, your lose your access key.
-Therefore, it is important to have appropriate recovery mechanisms.
+Therefore, it is important to either have another registered device or an appropriate recovery mechanisms.
 
 Likewise, if your device is stolen and the thief can unlock it (for example if the pattern is trivial),
 then the thief has full control over your phone and could possibly also impersonate you.
 In this case, it is important to remove that device from the list of authorized devices.
 
-Unlike traditional authentication systems with a single password,
-you register your devices individually, with distinct access keys.
+
 
 
 <img src="img/icon-target.svg" style="height:2em; vertical-align:middle" /> The vision
