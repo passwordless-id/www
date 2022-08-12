@@ -24,7 +24,7 @@ function randomString() {
 }
 
 function toBuffer(txt) {
-    return Uint8Array.from(txt, c => c.charCodeAt(0))
+    return Uint8Array.from(txt, c => c.charCodeAt(0)).buffer
 }
 
 function parseBuffer(buffer) {
@@ -85,6 +85,10 @@ function parseAttestation(attestationObject) {
         attStmt: att.attStmt,
         authData: parseAuthenticatorData(att.authData)
     }
+}
+
+export function parseAuthenticatorDataBase64(authData) {
+    return parseAuthenticatorData(parseBase64(authData))
 }
 
 function parseAuthenticatorData(authData) {

@@ -12,7 +12,9 @@
 
     .field .field {
       flex-basis: 0;
+      overflow: auto;
     }
+
 
     .hint {
       color: #777;
@@ -176,12 +178,12 @@
 
     <b-field label="AuthenticatorData" horizontal>
         <b-input v-model="verification.authenticatorData" type="textarea"></b-input>
-        <div class="hint"></div>
+        <div class="hint"><pre>{{parseAuthData(verification.authenticatorData)}}</pre></div>
     </b-field>
 
     <b-field label="ClientData" horizontal>
         <b-input v-model="verification.clientData" type="textarea"></b-input>
-        <div class="hint"></div>
+        <div class="hint"><pre>{{parseClientData(verification.clientData)}}</pre></div>
     </b-field>
 
     <b-field label="Signature" horizontal>
@@ -198,9 +200,10 @@
     <div class="message" :class="{'is-success': verification.isValid, 'is-danger': !verification.isValid}"
          v-if="verification.isValid !== null">
         <div class="message-body">
-            {{verification.isValid ? 'Valid' : 'Invalid'}} signature
+            Signature is {{verification.isValid ? 'valid' : 'invalid'}}
         </div>
     </div>
+
 
 </main>
 

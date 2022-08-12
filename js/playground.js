@@ -79,6 +79,12 @@ import * as passwordless from './passwordless.js'
                 })
                 this.verification.isValid = false
             }
+        },
+        parseAuthData(authData) {
+            return passwordless.parseAuthenticatorDataBase64(authData)
+        },
+        parseClientData(clientData) {
+            return JSON.parse(window.atob(clientData))
         }
     }
  })

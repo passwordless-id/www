@@ -43,9 +43,6 @@ Moreover:
 
 ### What if my device is lost or stolen? 
 
-Unlike traditional authentication systems with a single password,
-using passwordless authentication the user can register several "access keys", one per device.
-
 If you lose your device, your lose your access key.
 Therefore, it is important to have appropriate recovery mechanisms.
 
@@ -53,25 +50,26 @@ Likewise, if your device is stolen and the thief can unlock it (for example if t
 then the thief has full control over your phone and could possibly also impersonate you.
 In this case, it is important to remove that device from the list of authorized devices.
 
+Unlike traditional authentication systems with a single password,
+you register your devices individually, with distinct access keys.
 
 
-
-### What is this website about?
+<img src="img/icon-target.svg" style="height:2em; vertical-align:middle" /> The vision
+---------------------------
 
 Currently, this is just a demo, a few guides, tips and resources about the recent webauthn protocol.
 
 In the future, "Passwordless" is planned to become a "universal authentication platform".
-A free public webservice to let:
 
-- any user register/authenticate
-- any app/service know who the user is (provided the user allows it)
+The goals are multiple:
 
-The goals are multiple.
-Make the web a safer place,
-make it easier for developers,
-make it more comfortable for users.
+- Make the web a safer place
+- Make it easier for developers
+- Make it more comfortable for users
+- Free, funded through sponsorships and donations
 
+Basically, a free public webservice to let:
 
-It is "work in progress" ;)
----------------------------
+- Any user register/authenticate
+- Any app/service know who the user is (provided the user allows it)
 
