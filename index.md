@@ -9,8 +9,8 @@ Passwordless
 
 > Disclaimer: this demo only stores information locally on your device, it does not send *anything* remotely.
 
-![FAQ](img/icon-faq.svg) F.A.Q. 
----------------------------------------------
+<img src="img/icon-faq.svg" style="height:2em; vertical-align:middle" /> F.A.Q. 
+-------------------------------
 
 ### Is my fingerprint/face sent to the server? 
 
@@ -41,17 +41,22 @@ Moreover:
 - It protects against phishing (article coming soon)
 - The cryptographic keys are never exposed (article coming soon)
 
-### What if my device is stolen? 
+### What if my device is lost or stolen? 
 
-If your device is stolen and the thief can unlock it (for example if the pattern is trivial),
+Unlike traditional authentication systems with a single password,
+using passwordless authentication the user can register several "access keys", one per device.
+
+If you lose your device, your lose your access key.
+Therefore, it is important to have appropriate recovery mechanisms.
+
+Likewise, if your device is stolen and the thief can unlock it (for example if the pattern is trivial),
 then the thief has full control over your phone and could possibly also impersonate you.
 In this case, it is important to remove that device from the list of authorized devices.
 
 
----
 
-What is this website about?
----------------------------
+
+### What is this website about?
 
 Currently, this is just a demo, a few guides, tips and resources about the recent webauthn protocol.
 
@@ -66,7 +71,6 @@ Make the web a safer place,
 make it easier for developers,
 make it more comfortable for users.
 
----
 
 It is "work in progress" ;)
 ---------------------------
