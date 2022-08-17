@@ -1,6 +1,25 @@
 Overview
 ========
 
+How does it work?
+-----------------
+
+### Registration
+
+1. A challenge (webauthn vocabulary for a [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) is generated server-side
+2. The user is prompted to enter biometrics (fingerprint/face) or pin/password of the device
+3. A cryptographic key pair is created
+4. The public key (among others) is sent to the server
+5. The server verifies the challenge, optionally verifies the attestation and stores the public key
+
+### Authentication
+
+1. A challenge is generated server-side
+2. The user is prompted to enter biometrics (fingerprint/face) or pin/password of the device
+3. The private key is used to sign the message including the challenge
+4. The server verifies the challenge and the signature using the previously stored public key
+
+
 Specifications
 --------------
 
