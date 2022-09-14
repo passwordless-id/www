@@ -18,6 +18,7 @@ import * as passwordless from './passwordless.js'
             credentialId: null,
             challenge: btoa(window.crypto.randomUUID()),
             options: {
+                authenticatorType: 'auto',
                 userVerification: 'required',
                 timeout: 60000,
             },
@@ -48,10 +49,12 @@ import * as passwordless from './passwordless.js'
                 this.authentication.credentialId = res.credential.id
             }
             catch(e) {
+                console.warn(e)
                 this.$buefy.toast.open({
                     message: e,
                     type: 'is-danger'
                 })
+                this.registration.result = {}
             }
         },
         async login() {
@@ -61,6 +64,7 @@ import * as passwordless from './passwordless.js'
                 this.authentication.result = res
             }
             catch(e) {
+                console.warn(e)
                 this.$buefy.toast.open({
                     message: e,
                     type: 'is-danger'
@@ -73,6 +77,7 @@ import * as passwordless from './passwordless.js'
                 this.verification.isValid = await passwordless.verify(this.verification)
             }
             catch(e) {
+                console.warn(e)
                 this.$buefy.toast.open({
                     message: e,
                     type: 'is-danger'

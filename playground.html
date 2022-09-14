@@ -46,7 +46,7 @@
 </head>
 
 <body>
-<main id="app" class="container">
+<main id="app" class="container p-2">
 
     <header class="block has-text-centered">
         <h1 class="title">Passwordless Playground</h1>
@@ -132,6 +132,16 @@
     <b-field label="Challenge" horizontal custom-class="required">
         <b-input v-model="authentication.challenge" placeholder="Challenge"></b-input>
         <div class="hint">A server-side randomly generated string, the base64 encoded version will be signed.</div>
+    </b-field>
+
+    <b-field label="authenticatorType" horizontal>
+        <b-select v-model="authentication.options.authenticatorType" expanded>
+            <option>auto</option>
+            <option>local</option>
+            <option>extern</option>
+            <option>both</option>
+        </b-select>
+        <div class="hint">Which device to use as authenticator.</div>
     </b-field>
 
     <b-field label="Timeout" horizontal>

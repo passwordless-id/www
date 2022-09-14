@@ -186,7 +186,27 @@ async function getAuthAttachment(authType) {
     } catch(e) {
         // might happen due to some security policies
         // see https://w3c.github.io/webauthn/#sctn-isUserVerifyingPlatformAuthenticatorAvailable
-        return null
+        return undefined
+    }
+}
+
+
+async function getTransports(authType) {
+    if(authType === "local")
+        return ['internal']
+    if(authType === "extern")
+        return ['usb', 'ble', 'nfc']
+    if(authType === "both")
+        return ['internal', 'usb', 'ble', 'nfc']
+
+    // the default case: "auto", depending on device capabilities
+    try {
+        if(await isLocal())
+            return ['internal']
+        else
+            return ['usb', 'ble', 'nfc']
+    } catch(e) {
+        return undefined // or all?
     }
 }
 
@@ -278,18 +298,26 @@ export async function register(username, challenge, options) {
  * @param {Object} [options] Optional parameters.
  * @param {number} [options.timeout=60000] Number of milliseconds the user has to respond to the biometric/PIN check.
  * @param {'required'|'preferred'|'discouraged'} [options.userVerification='required'] Whether to prompt for biometric/PIN check or not.
+ * @param {'auto'|'local'|'extern'|'both'}       [options.authenticatorType='auto'] Which device to use as authenticator.
+ *          'auto': if the local device can be used as authenticator it will be preferred. Otherwise it will prompt for an external device.
+ *          'local': use the local device (using TouchID, FaceID, Windows Hello or PIN)
+ *          'extern': use an external device (security key or connected phone)
+ *          'both': prompt the user to choose between local or external device. The UI and user interaction in this case is platform specific.
  */
+// 
 export async function login(credentialIds, challenge, options) {
     if(!options)
         options = {}
 
+    const transports = await getTransports(options.authenticatorType ?? "auto");
+    
     let authOptions = {
         challenge: parseBase64url(challenge),
         rpId: window.location.hostname,
         allowCredentials: credentialIds.map(id => { return {
             id: parseBase64url(id),
-            type: 'public-key',
-            //transports: ['internal', 'usb', 'ble', 'nfc'],
+            type: "public-key",
+            transports: transports,
         }}),
         userVerification: options.userVerification ?? "required",
         timeout: options.timeout ?? 60000,
