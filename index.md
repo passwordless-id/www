@@ -8,7 +8,7 @@ Passwordless
 
 > Less passwords, more security!
 
-![Banner](img/biometric_banner.png)
+![Banner](img/banner-biometric-auth.svg)
 
 <iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe>
 
