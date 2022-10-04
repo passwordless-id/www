@@ -169,12 +169,10 @@ Validating the data
 The validation procedure is described [here](https://w3c.github.io/webauthn/#sctn-registering-a-new-credential)
 in a currently **26 steps procedure**.
 
-> This is quite ironic since none(*) of the data received is signed.
+> This is quite ironic since none(\*) of the data received is signed.
 > It is also trivial for the client to manipulate the data in the absence of a signature.
-> (*) The only thing that possess a signature is the *attestation*.
-> However, it is not even guaranteed to be provided, like for Apple devices and apparently also google passkeys.
-> So, basically, all the information you receive is taken in good faith.
-> It is more a format validation than anything.
+> (\*) The only thing that possess a signature is the *attestation*.
+> However, it is not even guaranteed to be provided, like for Apple devices and apparently also google passkeys. So, basically, all the information you receive is taken in good faith. It is more a format validation than anything.
 
 Since no signature is present, the need to validate the data is questionable.
 
