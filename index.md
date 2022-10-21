@@ -14,6 +14,28 @@ Passwordless
 
 > Disclaimer: this demo only stores information locally on your device, it does not send *anything* remotely.
 
+
+
+<img src="img/icon-target.svg" style="height:2em; vertical-align:middle" /> The vision
+---------------------------
+
+Currently, this is just a demo, a few guides, tips and resources about the recent [webauthn](webauthn/1_introduction.md) protocol.
+
+In the future, "Passwordless" is planned to become a "free public identity provider".
+
+An authentication platform with multiple goals:
+
+- Make the web a safer place
+- Make it easier for developers
+- More comfort and control for users
+
+Basically, a free public webservice to let:
+
+- Any user register/authenticate
+- Any app/service know who the user is (provided the user allows it)
+
+
+
 <img src="img/icon-faq.svg" style="height:2em; vertical-align:middle" /> F.A.Q. 
 -------------------------------
 
@@ -58,25 +80,4 @@ Likewise, if your device is stolen and the thief can unlock it (for example if t
 then the thief has full control over your phone and could possibly also impersonate you.
 In this case, it is important to remove that device from the list of authorized devices.
 
-
-
-
-<img src="img/icon-target.svg" style="height:2em; vertical-align:middle" /> The vision
----------------------------
-
-Currently, this is just a demo, a few guides, tips and resources about the recent webauthn protocol.
-
-In the future, "Passwordless" is planned to become a "universal authentication platform".
-
-The goals are multiple:
-
-- Make the web a safer place
-- Make it easier for developers
-- Make it more comfortable for users
-- Free, funded through sponsorships and donations
-
-Basically, a free public webservice to let:
-
-- Any user register/authenticate
-- Any app/service know who the user is (provided the user allows it)
 
