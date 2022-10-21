@@ -1,13 +1,15 @@
-remote_theme: dagnelies/beautiful-jekyll
-#remote_theme: daattali/beautiful-jekyll
+#remote_theme: dagnelies/beautiful-jekyll
+remote_theme: daattali/beautiful-jekyll
 #remote_theme: just-the-docs/just-the-docs
 
 title: Passwordless
 
 author: Arnaud Dagnelies
 
+navbar-var-length: true
+
 navbar-links:
-  Playground: playground.html
+  Playground: https://webauthn.passwordless.id/demos/playground.html
   Usage:
     - Introduction: usage/1_introduction
     - JS Helper library: usage/2_js
