@@ -31,6 +31,7 @@ Passwordless
 <script src="js/sign-in-with.js"></script>
 
 
+---
 
 
 <img src="img/icon-target.svg" style="height:2em; vertical-align:middle" /> The vision
