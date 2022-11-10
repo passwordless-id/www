@@ -10,6 +10,7 @@ Passwordless
 
 ![Banner](img/banner-biometric-auth.svg)
 
+<!--
 <section id="userinfo" class="hidden">
   <img />
   <h1>Hello ???!</h1>
@@ -24,8 +25,9 @@ Passwordless
 </section>
 
 <script src="js/sign-in-with.js"></script>
+-->
 
-<!--iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe-->
+<iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe>
 
 
 
