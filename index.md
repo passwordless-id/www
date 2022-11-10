@@ -10,9 +10,23 @@ Passwordless
 
 ![Banner](img/banner-biometric-auth.svg)
 
-<iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe>
+<section id="userinfo" class="hidden">
+  <img />
+  <h1>Hello ???!</h1>
+  <pre></pre>
+</section>
 
-> Disclaimer: this demo only stores information locally on your device, it does not send *anything* remotely.
+<section id="login" class="hidden">
+  <p>Sign in with...</p>
+  <a class="btn btn-default" href="https://ui.passwordless.id">
+    <img src="http://passwordless.id/logo/logo-500x125.svg" />
+  </a>
+</section>
+
+<script src="js/sign-in-with.js"></script>
+
+<!--iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe-->
+
 
 
 
