@@ -10,7 +10,10 @@ Passwordless
 
 ![Banner](img/banner-biometric-auth.svg)
 
-<!--
+<iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe>
+
+
+
 <section id="userinfo" class="hidden">
   <img />
   <h1>Hello ???!</h1>
@@ -19,15 +22,13 @@ Passwordless
 
 <section id="login" class="hidden">
   <p>Sign in with...</p>
-  <a class="btn btn-default" href="https://ui.passwordless.id">
+  <a class="btn-passwordless-id" href="https://ui.passwordless.id">
     <img src="http://passwordless.id/logo/logo-500x125.svg" />
   </a>
 </section>
 
+<link rel="stylesheet" type="text/css" href="css/sign-in-with.css">
 <script src="js/sign-in-with.js"></script>
--->
-
-<iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe>
 
 
 
