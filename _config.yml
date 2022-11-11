@@ -25,16 +25,33 @@ navbar-links:
 
 edit_page_button: true
 
-navbar-col: "#7957d5"
+#light: "#d4fbff"
+#medium: "#6dc9f7"
+#dark: "#0089ef"
+
+navbar-col: "#6dc9f7"
 navbar-text-col: "#fff"
-navbar-border-col: "#7957d5"
+navbar-border-col: "#0089ef"
 
 page-col: "#fff"
 text-col: "#000"
-link-col: "#7957d5"
-hover-col: "#f2effb"
+link-col: "#0089ef"
+hover-col: "#6dc9f7"
 
-footer-col: "#f2effb"
-footer-text-col: "#552fbc"
-footer-link-col: "#7957d5"
-footer-hover-col: "#000"
+footer-col: "#ffd7e5"
+footer-text-col: "#fa759e"
+
+
+#navbar-col: "#7957d5"
+#navbar-text-col: "#fff"
+#navbar-border-col: "#7957d5"
+
+#page-col: "#fff"
+#text-col: "#000"
+#link-col: "#7957d5"
+#hover-col: "#f2effb"
+
+#footer-col: "#f2effb"
+#footer-text-col: "#552fbc"
+#footer-link-col: "#7957d5"
+#footer-hover-col: "#000"
