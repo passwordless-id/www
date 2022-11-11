@@ -19,13 +19,15 @@ Passwordless
 
 <section id="login" class="hidden">
   <p>Sign in with...</p>
-  <a class="btn-passwordless-id" href="https://ui.passwordless.id">
+  <a class="btn-passwordless-id" href="https://ui.passwordless.id/authorize">
     <img src="http://passwordless.id/logo/logo-500x125.svg" />
   </a>
 </section>
 
 <link rel="stylesheet" type="text/css" href="css/sign-in-with.css">
 <script src="js/sign-in-with.js"></script>
+
+This button is simply a link to https://ui.passwordless.id/authorize and the code to fetch the user informations is really simple. See for yourself: https://passwordless.id/js/sign-in-with.js
 
 ---
 
