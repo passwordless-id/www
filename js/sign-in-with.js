@@ -22,7 +22,7 @@ async function init() {
 
 function showUser(userinfo) {
   document.querySelector('#userinfo img').src = userinfo.picture
-  document.querySelector('#userinfo h1').textContent = userinfo.nickname ?? 'Error: username missing?!'
+  document.querySelector('#userinfo h3').textContent = userinfo.nickname ?? 'Error: username missing?!'
   document.querySelector('#userinfo pre').textContent = JSON.stringify(userinfo, null, 2)
   document.getElementById('userinfo').className = 'visible'
 }
