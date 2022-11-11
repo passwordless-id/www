@@ -1,11 +1,9 @@
 .hidden {
-  opacity: 0;
-  transition: opacity 1s;
+  display: none;
 }
 
 .visible {
-  opacity: 1;
-  transition: opacity 1s;
+  display: initial;
 }
 
 #userinfo img {
