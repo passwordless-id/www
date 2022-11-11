@@ -12,8 +12,10 @@ Passwordless
 
 
 <section id="userinfo" class="hidden">
-  <img />
-  <h1>Hello ???!</h1>
+  <div class="user-card">
+    <img />
+    <h1>Hello ???!</h1>
+  </div>
   <pre></pre>
 </section>
 

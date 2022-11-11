@@ -9,12 +9,18 @@
 }
 
 #userinfo img {
-  height: 4rem;
+  height: 3rem;
+}
+
+.user-card {
+  box-shadow: 0 0 1rem #777;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
 }
 
 #userinfo pre {
-  text-align: left;
-  background-color: ;
+  background-color: #ffd7e5;
 }
 
 .btn-passwordless-id {
