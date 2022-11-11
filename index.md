@@ -10,18 +10,29 @@ Passwordless
 
 ![Banner](img/banner-biometric-auth.svg)
 
-<iframe src="form.html" style="width:100%;height:300px;border:none;"></iframe>
 
-> Disclaimer: this demo only stores information locally on your device, it does not send *anything* remotely.
+<section id="userinfo" class="hidden">
+  <img />
+  <h1>Hello ???!</h1>
+  <pre></pre>
+</section>
 
+<section id="login" class="hidden">
+  <p>Sign in with...</p>
+  <a class="btn-passwordless-id" href="https://ui.passwordless.id">
+    <img src="http://passwordless.id/logo/logo-500x125.svg" />
+  </a>
+</section>
 
+<link rel="stylesheet" type="text/css" href="css/sign-in-with.css">
+<script src="js/sign-in-with.js"></script>
+
+---
 
 <img src="img/icon-target.svg" style="height:2em; vertical-align:middle" /> The vision
 ---------------------------
 
-Currently, this is just a demo, a few guides, tips and resources about the recent [webauthn](webauthn/1_introduction.md) protocol.
-
-In the future, "Passwordless" is planned to become a "free public identity provider".
+In the future, "Passwordless.ID" is planned to become a "free public identity provider".
 
 An authentication platform with multiple goals:
 
@@ -29,10 +40,8 @@ An authentication platform with multiple goals:
 - Make it easier for developers
 - More comfort and control for users
 
-Basically, a free public webservice to let:
 
-- Any user register/authenticate
-- Any app/service know who the user is (provided the user allows it)
+---
 
 
 
@@ -79,5 +88,35 @@ Therefore, it is important to either have another registered device or an approp
 Likewise, if your device is stolen and the thief can unlock it (for example if the pattern is trivial),
 then the thief has full control over your phone and could possibly also impersonate you.
 In this case, it is important to remove that device from the list of authorized devices.
+
+
+---
+
+Use it!
+-------
+
+Accessing the profile is as simple as calling `GET /userinfo`. See for yourself: https://api.passwordless.id/userinfo
+
+The response is something like this:
+
+    {
+      "sub": "myusername",
+      "nickname": "My Nickname",
+      "picture": "https://ui.passwordless.id/avatars/andy.svg",
+    }
+
+Of course, this works only if:
+
+- the user is signed in (Otherwise you receive `401 Unauthorized`)
+- The user ganted access (Otherwise you receive `403 Forbidden`)
+
+In order to let the user sign in or grant access, simply invoke `https://api.passwordless.id/authorize`.
+
+You might also request access to a larger scope, like phone number, personal information, address...
+
+You can also request a JWT using `GET /token` to obtain the same information as a signed token. This token is particularly useful for the server side, since the JWT signature proves the user information authenticity.
+
+Find more information about its usage here.
+
 
 

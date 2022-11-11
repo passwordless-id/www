@@ -1,0 +1,33 @@
+.hidden {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#userinfo img {
+  height: 4rem;
+}
+
+#userinfo pre {
+  text-align: left;
+}
+
+.btn-passwordless-id {
+  border: 1px solid #aaa;
+  border-radius: 0.3rem;
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  background-color: #eee;
+}
+
+.btn-passwordless-id:hover {
+  background-color: #ddd;
+}
+
+.btn-passwordless-id img {
+  height: 2rem;
+}
