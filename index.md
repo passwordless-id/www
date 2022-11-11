@@ -14,7 +14,7 @@ Passwordless
 <section id="userinfo" class="hidden">
   <div class="user-card">
     <img />
-    <h1>Hello ???!</h1>
+    <h3>Sign in first!</h3>
   </div>
   <pre></pre>
 </section>
@@ -29,7 +29,7 @@ Passwordless
 <link rel="stylesheet" type="text/css" href="css/sign-in-with.css">
 <script src="js/sign-in-with.js"></script>
 
-This button is simply a link to https://ui.passwordless.id/authorize and the code to fetch the user informations is really simple. See for yourself: https://passwordless.id/js/sign-in-with.js
+This button is simply a link to [/authorize](https://ui.passwordless.id/authorize) and the code to fetch the user informations is really simple. [See for yourself](js/sign-in-with.js).
 
 ---
 
