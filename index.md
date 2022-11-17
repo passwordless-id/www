@@ -26,7 +26,7 @@ An authentication platform with multiple goals:
 - Make it easier for developers
 - More comfort and control for users
 
-All of this thanks to a small button like this (currently buggy due to some unfinished refactoring).
+All of this thanks to a small button like this (*currently buggy due to some unfinished refactoring*).
 
 <section id="userinfo" class="hidden">
   <div class="user-card">
