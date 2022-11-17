@@ -11,6 +11,23 @@ Passwordless
 ![Banner](img/banner-biometric-auth.svg)
 
 
+<iframe src="form.html" style="width:100%; height:300px; border:none;"></iframe>
+
+---
+
+<img src="img/icon-target.svg" style="height:2em; vertical-align:middle" /> The vision
+---------------------------
+
+In the future, "Passwordless.ID" is planned to become a "free public identity provider".
+
+An authentication platform with multiple goals:
+
+- Make the web a safer place
+- Make it easier for developers
+- More comfort and control for users
+
+All of this thanks to a small button like this (currently buggy due to some unfinished refactoring).
+
 <section id="userinfo" class="hidden">
   <div class="user-card">
     <img />
@@ -30,19 +47,6 @@ Passwordless
 <script src="js/sign-in-with.js"></script>
 
 This button is simply a link to [/authorize](https://ui.passwordless.id/authorize) and the code to fetch the user informations is really simple. [See for yourself](js/sign-in-with.js).
-
----
-
-<img src="img/icon-target.svg" style="height:2em; vertical-align:middle" /> The vision
----------------------------
-
-In the future, "Passwordless.ID" is planned to become a "free public identity provider".
-
-An authentication platform with multiple goals:
-
-- Make the web a safer place
-- Make it easier for developers
-- More comfort and control for users
 
 
 ---
