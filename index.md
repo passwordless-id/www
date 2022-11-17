@@ -37,7 +37,7 @@ All of this thanks to a small button like this (currently buggy due to some unfi
 </section>
 
 <section id="login" class="hidden">
-  <p>Sign in with...</p>
+  <span>Sign in with... </span>
   <a class="btn-passwordless-id" href="https://ui.passwordless.id/authorize">
     <img src="http://passwordless.id/logo/logo-500x125.svg" />
   </a>
