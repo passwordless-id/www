@@ -1,6 +1,6 @@
 async function init() {
   // The API call to fetch the user
-  const res = await fetch('https://api.passwordless.id/userinfo', {
+  const res = await fetch('https://api.passwordless.id/openid/userinfo', {
     mode: 'cors',
     credentials: 'include'
   })
