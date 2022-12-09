@@ -103,7 +103,7 @@ In this case, it is important to remove that device from the list of authorized 
 Use it!
 -------
 
-Accessing the profile is as simple as calling `GET /userinfo`. See for yourself: https://api.passwordless.id/userinfo
+Accessing the profile is as simple as calling `GET /userinfo`. See for yourself: https://api.passwordless.id/openid/userinfo
 
 The response is something like this:
 
