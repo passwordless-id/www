@@ -19,7 +19,7 @@ navbar-links:
   Webauthn Guide:
     - Introduction: protocols/webauthn/1_introduction
     - Registration: protocols/webauthn/2_registration
-    - Authentication: protocols/webauthn/3_login
+    - Authentication: protocols/webauthn/3_authentication
     - Security & Privacy: protocols/webauthn/4_security
   Thoughts: 
     - E-Mails vs Usernames: thoughts/emails-vs-usernames
