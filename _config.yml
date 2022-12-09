@@ -13,11 +13,14 @@ navbar-links:
   Usage:
     - Introduction: usage/1_introduction
     - JS Helper library: usage/2_js
-  Webauthn Guide:
-    - Introduction: webauthn/1_introduction
-    - Registration: webauthn/2_registration
-    - Authentication: webauthn/3_login
-    - Security & Privacy: webauthn/4_security
+  Protocols:
+    OAuth2 / OpenID:
+      - Introduction: protocols/oauth2/1_introduction
+    Webauthn Guide:
+      - Introduction: protocols/webauthn/1_introduction
+      - Registration: protocols/webauthn/2_registration
+      - Authentication: protocols/webauthn/3_login
+      - Security & Privacy: protocols/webauthn/4_security
   Thoughts: 
     - E-Mails vs Usernames: thoughts/emails-vs-usernames
     - User Guidance: thoughts/guidance
