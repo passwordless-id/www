@@ -62,7 +62,7 @@ Here is an example but you could design it however you want.
 Using the [@passwordless-id/connect]() library, adding functionality to the button becomes a breeze.
 
 ```js
-import connect from 'https://unpkg...'
+import connect from 'https://unpkg.com/@passwordless-id/connect'
 
 // The scope indicates what should be read form the profile and must be granted by the user
 const scope = 'openid email avatar'

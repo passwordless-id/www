@@ -1,4 +1,4 @@
-import connect from 'https://unpkg...'
+import connect from 'https://unpkg.com/@passwordless-id/connect'
 
 // The scope indicates what should be read form the profile and must be granted by the user
 const scope = 'openid email avatar'
