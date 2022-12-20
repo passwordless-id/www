@@ -14,9 +14,11 @@
   box-shadow: 0 0 1rem #777;
   border-radius: 0.3rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 0.5rem;
-  margin: 1rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  width: fit-content;
 }
 
 #userinfo pre {
