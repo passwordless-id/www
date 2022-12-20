@@ -33,11 +33,11 @@ function showLoginButton() {
 }
 
 function showUserInfo(userinfo) {
+  document.getElementById('login').className = 'hidden'
+  document.getElementById('userinfo').className = 'visible'
+  
   document.querySelector('#userinfo img').src = userinfo.picture
   document.querySelector('#userinfo h3').textContent = userinfo.nickname ?? 'Error: username missing?!'
   document.querySelector('#userinfo pre').textContent = JSON.stringify(userinfo, null, 2)
-  
-  document.getElementById('login').className = 'hidden'
-  document.getElementById('userinfo').className = 'visible'
 }
 
