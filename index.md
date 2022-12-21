@@ -25,7 +25,7 @@ Passwordless
 - More comfort and control for users
 
 
-<img src="?" > Sign in with...
+<img src="img/icon-button.svg" style="height:2em; vertical-align:middle" /> Sign in with...
 ------------------------------
 
 All you have to do to leverage passwordless authentication of this thanks to a small button like this.
