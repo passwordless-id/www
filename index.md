@@ -28,8 +28,9 @@ Passwordless
 <img src="img/icon-button.svg" style="height:2em; vertical-align:middle" /> Sign in with...
 ------------------------------
 
-All you have to do to leverage passwordless authentication of this thanks to a small button like this.
+Leverage passwordless authentication thanks to a small button like this.
 
+---
 
 <section id="userinfo" class="hidden">
   <div class="user-card">
@@ -48,6 +49,8 @@ All you have to do to leverage passwordless authentication of this thanks to a s
 
 <link rel="stylesheet" type="text/css" href="css/sign-in-with.css">
 <script src="js/sign-in-with.js" type="module"></script>
+
+---
 
 The code for that button and to display the response really simple.
 
