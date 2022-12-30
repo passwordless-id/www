@@ -8,7 +8,9 @@ Using passwordless.id as an identity provider is trivial. No account is required
 The "simple" flow
 -----------------
 
-As the name implies, the "simple" flow is pretty straightforward.
+As the name implies, the "simple" flow is pretty straightforward and depicted in the following diagram.
+
+![usage diagram](usage.svg)
 
 1. Request an id_token from the browser side
    - if an `id_token` is returned, great
