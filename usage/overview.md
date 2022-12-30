@@ -1,6 +1,10 @@
 Overview
 ========
 
+Using passwordless.id as an identity provider is trivial. No account is required, you can start right away as [this demo](https://passwordless-id.github.io/demo/) shows ( [source code](https://github.com/passwordless-id/demo) ).
+
+
+
 The "simple" flow
 -----------------
 
