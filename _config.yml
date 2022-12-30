@@ -9,10 +9,10 @@ author: Arnaud Dagnelies
 navbar-var-length: true
 
 navbar-links:
-  Usage:
-    - Overview: TODO
-    - Browser side:
-    - Server side:
+  Demo:
+    - Live: https://passwordless-id.github.io/demo/
+    - Source: https://github.com/passwordless-id/demo
+  Pricing: pricing
   Webauthn:
     - Introduction: protocols/webauthn/1_introduction
     - Helper Library: https://github.com/passwordless-id/webauthn
