@@ -3,6 +3,21 @@ title: Passwordless
 subtitle: Authentication using TouchID or FaceID for everyone. Less passwords, more security!
 ---
 
+<style>
+  body {
+    text-align: center;
+  }
+  pre, ul {
+    text-align: left;
+  }
+  ul {
+    display: inline-block;
+  }
+  .feature-icon {
+    height: 10rem;
+  }
+</style>
+
 Passwordless
 ============
 
@@ -13,10 +28,14 @@ Passwordless
 
 <iframe src="form.html" style="width:100%; height:300px; border:none;"></iframe>
 
+
 ---
 
-<img src="img/icon-target.svg" style="height:2em; vertical-align:middle" /> The vision
----------------------------
+
+<img class="feature-icon" src="img/icon-target.svg" />
+
+The vision
+----------
 
 "Passwordless.ID" is meant to be a "free public identity provider" with the following philosophy:
 
@@ -25,12 +44,16 @@ Passwordless
 - More comfort and control for users
 
 
-<img src="img/icon-button.svg" style="height:2em; vertical-align:middle" /> Sign in with...
-------------------------------
+---
+
+
+<img class="feature-icon" src="img/icon-button.svg" />
+
+
+Sign in with...
+---------------
 
 Leverage passwordless authentication thanks to a small button like this.
-
----
 
 <section id="userinfo" class="hidden">
   <div class="user-card">
@@ -49,18 +72,6 @@ Leverage passwordless authentication thanks to a small button like this.
 
 <link rel="stylesheet" type="text/css" href="css/sign-in-with.css">
 <script src="js/sign-in-with.js" type="module"></script>
-
----
-
-The code for that button and to display the response really simple.
-
-Here is an example but you could design it however you want.
-
-```html
-<button id="login-btn" class="btn-passwordless-id">
-    <img src="http://passwordless.id/logo/logo-500x125.svg" />
-</button>
-```
 
 Using the [@passwordless-id/connect]() library, adding functionality to the button becomes a breeze.
 
@@ -90,16 +101,16 @@ async function login() {
 }
 ```
 
-Here is also a standalone demo if you prefer. Note that it does not work in codepen or similar editor because they are contained within IFrames.
+There is also a [standalone demo](https://passwordless-id.github.io/demo/) if you prefer. Note that it does not work in codepen or similar editor because they are contained within IFrames.
 
-TODO: open that in separte tabs!
 
 ---
 
 
+<img class="feature-icon" src="img/icon-faq.svg" /> 
 
-<img src="img/icon-faq.svg" style="height:2em; vertical-align:middle" /> F.A.Q. 
--------------------------------
+F.A.Q. 
+------
 
 ### Is my fingerprint/face sent to the server? 
 
