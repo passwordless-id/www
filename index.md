@@ -14,7 +14,7 @@ subtitle: Authentication using TouchID or FaceID for everyone. Less passwords, m
     display: inline-block;
   }
   .feature-icon {
-    height: 10rem;
+    height: 7rem;
   }
 </style>
 
