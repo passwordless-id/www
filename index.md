@@ -216,3 +216,17 @@ Find more information about its usage here.
 
 
 
+---
+
+Get started now
+---------------
+
+You can use the "Sign in" button on your own website directly. No account required, not even an email. This is a "public" identity provider. Everyone can use it as much as they want.
+
+
+---
+
+Want to be a sponsor?
+---------------------
+
+This is a free service. In order to keep it operating, some funds are necessary. If you want to be listed here and make this service even better, contact us to become a backer / sponsor!
