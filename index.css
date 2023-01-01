@@ -25,12 +25,13 @@ h1, h2 {
 }
 
 hr {
-    margin-top: 4rem;
+    margin-top: 7rem;
 }
 
 .big-icon {
     height: 7rem;
     background-color: white;
     display: block; /* to center the image */
-    margin: -4rem auto 0;
+    margin: -5.25rem auto 0;
+    padding: 1rem;
 }
