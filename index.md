@@ -9,9 +9,7 @@ Passwordless
 ============
 
 <center>
-
 > Less passwords, more security!
-
 </center>
 
 ![Banner](img/banner-biometric-auth.svg)
@@ -96,37 +94,61 @@ Moreover, it also protects against further security threats like password reuse 
 ---
 
 
-<img class="big-icon" alt="banner" src="img/features/wisdom.svg" />
+<img class="big-icon" alt="banner" src="img/features/innovation.svg" />
 
 How does it work exactly? 
 -------------------------
 
-The authentication relies on [asymetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
+The authentication relies on a recent browser protocol called [webauthn](/protocols/webauthn/1_introduction) which is based on [asymetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
 
 Upon registration, a cryptographic key pair is generated for the user.
 The private key is stored on the device, protected by local authentication, while the public key is sent to the server.
 
+When a user wants to authenticate themselves, they must sign a random "challenge" using their private key. This signature is sent to the server, which verifies it using the user's public key. 
 
-When a user wants to authenticate themselves, they use their device to generate a signed message (called an "assertion") using their private key. This assertion is sent to the server, which verifies it using the user's public key. 
 
-For more technical details about the protocol, check the [webauthn guide](/protocols/webauthn/1_introduction).
+---
+
+<img class="big-icon" src="img/features/life-buoy.svg" />
+
+What if I lose my device? 
+-------------------------
+
+Unlike traditional authentication systems that can be accessed from anywhere using a single password, authentication here is device bound.
+Losing a device means losing the private key used to sign in.
+
+That is why Passwordless.ID allows to register multiple devices per user. It is both more convinient and safer.
+
+The user can also choose the recovery options it may accept, or how it authorizes to register a new device. Per other registered device, per SMS or per email. The latter one being convinient but less secure.
+
+Likewise, if your device is stolen or has a risk of being compromised, it can be blocked.
 
 
 ---
 
 
-What if my device is lost or stolen? 
-------------------------------------
+<img class="big-icon" alt="banner" src="img/features/API-Integration.svg" />
 
-Unlike traditional authentication systems with a single password,
-you register multiple access keys, one per device.
+OAuh2 / OpenID compatible
+-------------------------
 
-If you lose your device, your lose your access key.
-Therefore, it is important to either have another registered device or an appropriate recovery mechanisms.
+To authenticate the user and request authorization to read the profile, use the `auth` endpoint.
 
-Likewise, if your device is stolen and the thief can unlock it (for example if the pattern is trivial),
-then the thief has full control over your phone and could possibly also impersonate you.
-In this case, it is important to remove that device from the list of authorized devices.
+    GET /openid/authorize?scope=...
+
+And to get the user information.
+
+    GET /openid/userinfo
+
+---
+
+    {
+      "nickname": "Johny",
+      ...
+    }
+
+
+TODO: add full guide regarding integration with third party OAuth2/OpenID libs
 
 
 ---
@@ -163,38 +185,6 @@ There is also a [standalone demo](https://passwordless-id.github.io/demo/) if yo
 
 ---
 
-Got a question?
----------------
-
-Curiosity is always a good thing! Check out the F.A.Q. for usage questions, or the technical documentation for a deeper understanding.
-
----
-
-<img class="big-icon" alt="banner" src="img/features/API-Integration.svg" />
-
-Free public API
----------------
-
-Are you a developer? Help us make the world more secure and use this! It is really simple.
-
-To authenticate the user and request authorization to read the profile, use the `auth` endpoint.
-
-    GET /openid/auth?scope=...
-
-This is also OAuth2/OpenID compatible.
-
-    GET /openid/userinfo
-
----
-
-    {
-      "nickname": "Johny",
-      ...
-    }
-
-
-
----
 
 Use it!
 -------
@@ -229,6 +219,9 @@ Find more information about its usage here.
 Get started now
 ---------------
 
+
+Are you a developer? Help us make the world more secure and use this! It is really simple.
+
 You can use the "Sign in" button on your own website directly. No account required, not even an email. This is a "public" identity provider. Everyone can use it as much as they want.
 
 
@@ -238,3 +231,17 @@ Want to be a sponsor?
 ---------------------
 
 This is a free service. In order to keep it operating, some funds are necessary. If you want to be listed here and make this service even better, contact us to become a backer / sponsor!
+
+
+---
+
+<img class="big-icon" src="img/features/customer-experience.svg" />
+
+If you like it, share it!
+-------------------------
+
+This was made with love, sweat and considerate thoughts. We strive to make the best possible authentication experience and are glad to hear any feedback.
+
+If you like it too, talk about it to others! Share it with someone! Every little act is of great help to make it succeed. Thank you!
+
+In the case you plan to write a blog article, a tutorial, some news or anything alike, we would be glad to hear from you. Perhaps we can feature it on our blog!
