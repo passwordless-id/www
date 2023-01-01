@@ -90,9 +90,47 @@ Phishing usually involves the user into typing its password into a fake website,
 
 By getting rid of passwords, you get rid of phishing! Great, right?
 
-But not only that. It also protects against security threats due to password reuse and even data breaches!
+Moreover, it also protects against further security threats like password reuse and even data breaches! It is one of the most secure mechanisms available.
 
-----
+
+---
+
+
+<img class="big-icon" alt="banner" src="img/features/wisdom.svg" />
+
+How does it work exactly? 
+-------------------------
+
+The authentication relies on [asymetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
+
+Upon registration, a cryptographic key pair is generated for the user.
+The private key is stored on the device, protected by local authentication, while the public key is sent to the server.
+
+
+When a user wants to authenticate themselves, they use their device to generate a signed message (called an "assertion") using their private key. This assertion is sent to the server, which verifies it using the user's public key. 
+
+For more technical details about the protocol, check the [webauthn guide](/protocols/webauthn/1_introduction).
+
+
+---
+
+
+What if my device is lost or stolen? 
+------------------------------------
+
+Unlike traditional authentication systems with a single password,
+you register multiple access keys, one per device.
+
+If you lose your device, your lose your access key.
+Therefore, it is important to either have another registered device or an appropriate recovery mechanisms.
+
+Likewise, if your device is stolen and the thief can unlock it (for example if the pattern is trivial),
+then the thief has full control over your phone and could possibly also impersonate you.
+In this case, it is important to remove that device from the list of authorized devices.
+
+
+---
+
 
 <img class="big-icon" src="img/features/icon-button.svg" />
 
@@ -125,9 +163,6 @@ There is also a [standalone demo](https://passwordless-id.github.io/demo/) if yo
 
 ---
 
-
-<img class="big-icon" alt="banner" src="img/features/wisdom.svg" />
-        
 Got a question?
 ---------------
 
@@ -157,33 +192,6 @@ This is also OAuth2/OpenID compatible.
       ...
     }
 
----
-
-How does it work exactly? 
--------------------------
-
-It relies on [asymetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
-Upon registration, a cryptographic key pair is generated.
-The private key kept on the device, protected by biometrics,
-while the public key is sent to the server.
-In combination, they can be used to encrypt and decrypt messages respectively.
-For more technical details about the protocol, check the webauthn guide.
-
-
----
-
-What if my device is lost or stolen? 
-------------------------------------
-
-Unlike traditional authentication systems with a single password,
-you register multiple access keys, one per device.
-
-If you lose your device, your lose your access key.
-Therefore, it is important to either have another registered device or an appropriate recovery mechanisms.
-
-Likewise, if your device is stolen and the thief can unlock it (for example if the pattern is trivial),
-then the thief has full control over your phone and could possibly also impersonate you.
-In this case, it is important to remove that device from the list of authorized devices.
 
 
 ---
