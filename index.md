@@ -35,6 +35,8 @@ The vision
 
 This is achieved by providing tools and services to delegate the authentication to the Passwordless.ID API.
 
+**Please note that this is currently *in development*!**
+
 ---
 
 
@@ -132,23 +134,11 @@ Likewise, if your device is stolen or has a risk of being compromised, it can be
 OAuh2 / OpenID compatible
 -------------------------
 
-To authenticate the user and request authorization to read the profile, use the `auth` endpoint.
+Passwordless.ID is compatible with both OAuth2 and OpenID protocols. That way, you can use it as a generic OpenID provider for a "Sign in with..." button.
 
-    GET /openid/authorize?scope=...
+If you are familiar with OAuth, you probably know that it is an "authorization" protocol. Usually, the API also offer a set of operations to grant permission to. In the case of Passwordless.ID, the only operation is accessing (part of) the user profile.
 
-And to get the user information.
-
-    GET /openid/userinfo
-
----
-
-    {
-      "nickname": "Johny",
-      ...
-    }
-
-
-TODO: add full guide regarding integration with third party OAuth2/OpenID libs
+Moreover, since the only available operation is accessing the user profile, and the fact that it is a public service, it allows some simplifications. In particular, you will not need a `client_id` nor a `client_secret`. That way, you can start using a "Sign in with Passwordless.ID" button without the need to register anything.
 
 
 ---
@@ -186,8 +176,8 @@ There is also a [standalone demo](https://passwordless-id.github.io/demo/) if yo
 ---
 
 
-Use it!
--------
+Get started now
+---------------
 
 Accessing the profile is as simple as calling `GET /userinfo`. See for yourself: https://api.passwordless.id/openid/userinfo
 
@@ -213,13 +203,6 @@ You can also request a JWT using `GET /token` to obtain the same information as 
 Find more information about its usage here.
 
 
-
----
-
-Get started now
----------------
-
-
 Are you a developer? Help us make the world more secure and use this! It is really simple.
 
 You can use the "Sign in" button on your own website directly. No account required, not even an email. This is a "public" identity provider. Everyone can use it as much as they want.
@@ -227,8 +210,11 @@ You can use the "Sign in" button on your own website directly. No account requir
 
 ---
 
-Want to be a sponsor?
----------------------
+
+<img class="big-icon" src="img/features/branding-services.svg" />
+
+Sponsors welcome
+----------------
 
 This is a free service. In order to keep it operating, some funds are necessary. If you want to be listed here and make this service even better, contact us to become a backer / sponsor!
 
