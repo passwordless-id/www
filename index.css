@@ -1,0 +1,36 @@
+/*
+body {
+    text-align: center;
+}
+
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+ul {
+    text-align: left;
+}
+*/
+
+/*
+ul {
+    display: inline-block;
+}
+*/
+
+h1, h2 {
+    text-align: center;
+}
+
+hr {
+    margin-top: 4rem;
+}
+
+.big-icon {
+    height: 7rem;
+    background-color: white;
+    display: block; /* to center the image */
+    margin: -4rem auto 0;
+}
