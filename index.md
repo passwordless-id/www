@@ -45,7 +45,9 @@ This is achieved by providing tools and services to delegate the authentication 
 Your fingerprint/face never leaves your device
 ----------------------------------------------
 
-The biometric verification uses the *local* authentication mechamism already supported by your device. These are strongly protected and never leave the device. The verification is a safety measure used to prove you are you, then create or access cryptographic keys stored on your device. This keys, also known as passkeys, are in turn used for the authentication mechanism.
+The biometric verification uses the *local authentication* mechamism from your device. On the device, these biometric information is strongly protected and never exposed.
+
+The verification is a safety measure used to prove you are you, then create or access cryptographic keys stored on your device. These keys, also known as passkeys, are in turn used for the authentication mechanism.
 
 
 ---
@@ -84,14 +86,15 @@ The user verification is delegated to your platform. If you are uncomfortable wi
 It protects you from phishing
 -----------------------------
 
-> No more passwords, no more phishing!
- 
-Each web domain uses distinct access key(s) and cannot be stolen.
+Phishing usually involves the user into typing its password into a fake website, or other approaches like social engineering. It is the most common way to hack accounts.
+
+By getting rid of passwords, you get rid of phishing! Great, right?
+
+But not only that. It also protects against security threats due to password reuse and even data breaches!
 
 ----
 
 <img class="big-icon" src="img/features/icon-button.svg" />
-
 
 Sign in with...
 ---------------
@@ -128,7 +131,7 @@ There is also a [standalone demo](https://passwordless-id.github.io/demo/) if yo
 Got a question?
 ---------------
 
-<p>Curiosity is always a good thing! Check out the F.A.Q. for usage questions, or the technical documentation for a deeper understanding.
+Curiosity is always a good thing! Check out the F.A.Q. for usage questions, or the technical documentation for a deeper understanding.
 
 ---
 
