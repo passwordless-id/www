@@ -40,7 +40,7 @@ This is achieved by providing tools and services to delegate the authentication 
 ---
 
 
-<img class="big-icon" alt="banner" src="img/features/Incognito-Mode.svg" />
+<img class="big-icon" alt="banner" src="img/features/safety-box.svg" />
 
 Your fingerprint/face never leaves your device
 ----------------------------------------------
@@ -134,7 +134,7 @@ Likewise, if your device is stolen or has a risk of being compromised, it can be
 OAuh2 / OpenID compatible
 -------------------------
 
-Passwordless.ID is compatible with both OAuth2 and OpenID protocols. That way, you can use it as a generic OpenID provider for a "Sign in with..." button.
+Passwordless.ID is compatible with both *OAuth2* and *OpenID* protocols. That way, you can use it as a generic OpenID provider for a "Sign in with..." button.
 
 If you are familiar with OAuth, you probably know that it is an "authorization" protocol. Usually, the API also offer a set of operations to grant permission to. In the case of Passwordless.ID, the only operation is accessing (part of) the user profile.
 
@@ -210,16 +210,6 @@ You can use the "Sign in" button on your own website directly. No account requir
 
 ---
 
-
-<img class="big-icon" src="img/features/branding-services.svg" />
-
-Sponsors welcome
-----------------
-
-This is a free service. In order to keep it operating, some funds are necessary. If you want to be listed here and make this service even better, contact us to become a backer / sponsor!
-
-
----
 
 <img class="big-icon" src="img/features/customer-experience.svg" />
 
