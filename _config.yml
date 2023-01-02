@@ -16,7 +16,7 @@ navbar-links:
     - Overview: usage/overview
     - Browser side: https://passwordless-id.github.io/connect/
     - Server side: usage/server
-  Pricing: pricing
+  Pricing(free!): pricing
   Webauthn:
     - Introduction: protocols/webauthn/1_introduction
     - Helper Library: https://github.com/passwordless-id/webauthn
