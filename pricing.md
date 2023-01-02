@@ -1,6 +1,3 @@
-Pricing
--------
-
 <link rel="stylesheet" href="index.css">
 
 ---
