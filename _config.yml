@@ -9,18 +9,14 @@ author: Arnaud Dagnelies
 navbar-var-length: true
 
 navbar-links:
-  Demo:
-    - Live: https://passwordless-id.github.io/demo/
-    - Source: https://github.com/passwordless-id/demo
   Usage:
-    - Overview: usage/overview
-    - Browser side: https://passwordless-id.github.io/connect/
-    - Server side: usage/server
+    - '"Sign in with" button': usage/sign-in-with 
+    - As OpenID provider: usage/openid
+    - Verifying an `id_token`: usage/id_token
+    - Webauthn Helper Library: usage/webauthn
   Pricing(free!): pricing
   Webauthn:
     - Introduction: protocols/webauthn/1_introduction
-    - Helper Library: https://github.com/passwordless-id/webauthn
-    - Playground: https://webauthn.passwordless.id/demos/playground.html
     - Registration: protocols/webauthn/2_registration
     - Authentication: protocols/webauthn/3_authentication
     - Security & Privacy: protocols/webauthn/4_security

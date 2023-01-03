@@ -138,7 +138,7 @@ Passwordless.ID is compatible with both *OAuth2* and *OpenID* protocols. That wa
 
 If you are familiar with OAuth, you probably know that it is an "authorization" protocol. Usually, the API also offer a set of operations to grant permission to. In the case of Passwordless.ID, the only operation is accessing (part of) the user profile.
 
-Moreover, since the only available operation is accessing the user profile, and the fact that it is a public service, it allows some simplifications. In particular, you will not need a `client_id` nor a `client_secret`. That way, you can start using a "Sign in with Passwordless.ID" button without the need to register anything.
+If you want to add Passwordless.ID as an additional social login provider using some predefined library, check out our [OAuth2/OpenID guide](/usage/openid)! 
 
 
 ---
@@ -149,15 +149,12 @@ Moreover, since the only available operation is accessing the user profile, and 
 Sign in with...
 ---------------
 
-Passwordless.ID is compatible with OAuth2/OpenID and can be used out-of-the-box. You do not even need an account.
+Passwordless.ID is compatible with OAuth2/OpenID and can be used out-of-the-box. 
 
-TODO: provide an example
-
-For an even smoother integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
-
+For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
 
 ```js
-// Fetch user profile and `id_token`
+// Makes a redirect to let the user authenticate and authorize your app to read the scope
 const user = await connect.auth({scope: 'openid avatar email'})
 ```
 
@@ -179,34 +176,7 @@ There is also a [standalone demo](https://passwordless-id.github.io/demo/) if yo
 Get started now
 ---------------
 
-Accessing the profile is as simple as calling `GET /userinfo`. See for yourself: https://api.passwordless.id/openid/userinfo
-
-The response is something like this:
-
-    {
-      "sub": "myusername",
-      "nickname": "My Nickname",
-      "picture": "https://ui.passwordless.id/avatars/andy.svg",
-    }
-
-Of course, this works only if:
-
-- the user is signed in (Otherwise you receive `401 Unauthorized`)
-- The user ganted access (Otherwise you receive `403 Forbidden`)
-
-In order to let the user sign in or grant access, simply invoke `https://api.passwordless.id/authorize`.
-
-You might also request access to a larger scope, like phone number, personal information, address...
-
-You can also request a JWT using `GET /token` to obtain the same information as a signed token. This token is particularly useful for the server side, since the JWT signature proves the user information authenticity.
-
-Find more information about its usage here.
-
-
-Are you a developer? Help us make the world more secure and use this! It is really simple.
-
-You can use the "Sign in" button on your own website directly. No account required, not even an email. This is a "public" identity provider. Everyone can use it as much as they want.
-
+You can start using it right out of the box. It is a public service. No account is required, no email and it's free forever!
 
 ---
 
