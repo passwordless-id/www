@@ -1,8 +1,6 @@
 #demo {
   display: flex;
-  height: 100vh;
   align-items: center;
-  justify-content: space-around;
   flex-direction: column;
   gap: 1rem;
 }
