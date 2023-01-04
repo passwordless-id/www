@@ -43,7 +43,7 @@ Scopes
 ------
 
 - openid:
-  - sub: anonymized user ID
+  - sub: the user ID
 - avatar:
   - nickname
   - picture
@@ -58,16 +58,14 @@ Scopes
   - ...
 
 
-> Remark regarding the `sub` user ID.
-> 
-> According to the OpenID protocol, the `sub` value is the user identifier. We decided to deviate from the protocol and anonymize this ID for security and privacy reasons. The `sub` value will differ depending on the domain requesting the `id_token` or triggering the OAuth2 flow.
+> Regarding the `sub` user ID, it should noted that it uses "pairwise" identifiers. The identifier depends on the user *and* on the client domain requesting it.
 > 
 > **If a domain `example.com` and and a domain `other.org` request an `id_token`, they will obtain two distinct `sub` IDs, even if it is the same user. This applies to subdomains too.**
 > 
-> This was decided to:
+> This has two benefits:
 > 
-> - avoid tracking users accross multiple domains
-> - reduce the risk of using an `id_token` obtained from another website
+> - improved privacy by avoiding to correlate user IDs accross multiple domains
+> - improved security by reducing the risk of being fooled by an `id_token` obtained from another website
 
 
 
