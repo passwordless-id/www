@@ -28,6 +28,8 @@ Sign in with...
 
 Passwordless.ID is a public identity provider that can be used out-of-the-box and compatible with OAuth2 / OpenID. 
 
+**Try it out below**
+
 <link href="css/sign-in-with.css"  rel="stylesheet" />
 
 <div id="demo">
@@ -36,7 +38,12 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box an
     <span class="visually-hidden">Loading...</span>
 </div>
 
-<button id="sign-in" hidden class="btn btn-primary" onclick="onClickSignIn()">Sign In (click me!)</button>
+<section id="sign-in">
+    <p>Sign in with...</p>
+    <button hidden class="btn btn-light" onclick="onClickSignIn()">
+        <img src="logo/logo-500x125.png" style="height:2rem" />    
+    </button>
+</section>
 
 <section id="profile" class="card shadow profile" hidden>
     <div class="card-body">
@@ -51,7 +58,7 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box an
     </div>
 </section>
 
-<button id="sign-out" class="btn btn-primary" onclick="onClickSignOut()" hidden>Sign Out</button>
+<button id="sign-out" class="btn btn-light" onclick="onClickSignOut()" hidden>Sign Out</button>
 </div>
 
 <script type="module" src="js/sign-in-with.js"></script>
