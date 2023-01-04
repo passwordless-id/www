@@ -40,7 +40,7 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box an
 <section id="sign-in" hidden>
     <p>Sign in with... <b>(Try and click it!)</b></p>
     <button class="btn btn-light" onclick="onClickSignIn()">
-        <img src="logo/logo-500x125.png" style="height:2rem" />    
+        <img src="logo/logo-500x125.png" style="height:3rem" />    
     </button>
 </section>
 
