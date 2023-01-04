@@ -31,11 +31,12 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box an
 <link href="css/sign-in-with.css"  rel="stylesheet" />
 
 <div id="demo">
-<div id="spinner" class="spinner-border" role="status">
+<div id="spinner">
+    <span class="spinner-border" role="status"></span>
     <span class="visually-hidden">Loading...</span>
 </div>
 
-<button id="sign-in" hidden class="btn btn-default" onclick="onClickSignIn()">Sign In (click me!)</button>
+<button id="sign-in" hidden class="btn btn-primary" onclick="onClickSignIn()">Sign In (click me!)</button>
 
 <section id="profile" class="card shadow profile" hidden>
     <div class="card-body">
@@ -50,14 +51,14 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box an
     </div>
 </section>
 
-<button id="sign-out" class="btn btn-default" onclick="onClickSignOut()" hidden>Sign Out</button>
+<button id="sign-out" class="btn btn-primary" onclick="onClickSignOut()" hidden>Sign Out</button>
 </div>
 
 <script type="module" src="js/sign-in-with.js"></script>
 
 For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
 
-Check out the [standalone demo](https://passwordless-id.github.io/demo/) to try it out and the [user guide](usage/sign-in-with) to implement this on your site in 5 minutes! No account necessary!
+Check out the [standalone demo](https://github.com/passwordless-id/demo) to try it out and the [user guide](usage/sign-in-with) to implement this on your site in 5 minutes! No account necessary!
 
 
 ---
