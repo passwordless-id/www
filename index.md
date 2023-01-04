@@ -21,26 +21,49 @@ Passwordless
 ---
 
 
-<img class="big-icon" src="img/features/icon-target.svg" />
+<img class="big-icon" src="img/features/icon-button.svg" />
 
+Sign in with...
+---------------
 
-The vision
-----------
+Passwordless.ID is a public identity provider that can be used out-of-the-box and compatible with OAuth2 / OpenID. 
 
-"Passwordless.ID" is meant to be a "free public identity provider" with the following philosophy.
+<link href="css/sign-in-with.css"  rel="stylesheet" />
 
-- Make the web a safer place
-- Make it easier for developers
-- More comfort and control for users
+<div id="demo">
+<div id="spinner" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
 
-This is achieved by providing tools and services to delegate the authentication to the Passwordless.ID API.
+<button id="sign-in" hidden class="btn btn-default" onclick="onClickSignIn()">Sign In (click me!)</button>
 
-**Please note that this is currently *in development*!**
+<section id="profile" class="card shadow profile" hidden>
+    <div class="card-body">
+        <img id="picture"/>
+        <h3 id="nickname">Nickname</h3>
+    </div>
+</section>
+
+<section id="output" class="card shadow container" hidden>
+    <div class="card-body">
+        <pre><code></code></pre>
+    </div>
+</section>
+
+<button id="sign-out" class="btn btn-default" onclick="onClickSignOut()" hidden>Sign Out</button>
+</div>
+
+<script type="module" src="js/sign-in-with.js"></script>
+
+For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
+
+Check out the [standalone demo](https://passwordless-id.github.io/demo/) to try it out and the [user guide](usage/sign-in-with) to implement this on your site in 5 minutes! No account necessary!
+
 
 ---
 
 
-<img class="big-icon" alt="banner" src="img/features/safety-box.svg" />
+<img class="big-icon" alt="banner" src="img/features/Safety-Box.svg" />
 
 Your fingerprint/face never leaves your device
 ----------------------------------------------
@@ -109,22 +132,6 @@ The private key is stored on the device, protected by local authentication, whil
 When a user wants to authenticate themselves, they must sign a random "challenge" using their private key. This signature is sent to the server, which verifies it using the user's public key. 
 
 
----
-
-<img class="big-icon" src="img/features/life-buoy.svg" />
-
-What if I lose my device? 
--------------------------
-
-Unlike traditional authentication systems that can be accessed from anywhere using a single password, authentication here is device bound.
-Losing a device means losing the private key used to sign in.
-
-That is why Passwordless.ID allows to register multiple devices per user. It is both more convinient and safer.
-
-The user can also choose the recovery options it may accept, or how it authorizes to register a new device. Per other registered device, per SMS or per email. The latter one being convinient but less secure.
-
-Likewise, if your device is stolen or has a risk of being compromised, it can be blocked.
-
 
 ---
 
@@ -144,39 +151,20 @@ If you want to add Passwordless.ID as an additional social login provider using 
 ---
 
 
-<img class="big-icon" src="img/features/icon-button.svg" />
+<img class="big-icon" src="img/features/life-buoy.svg" />
 
-Sign in with...
----------------
+What if I lose my device? 
+-------------------------
 
-Passwordless.ID is compatible with OAuth2/OpenID and can be used out-of-the-box. 
+Unlike traditional authentication systems that can be accessed from anywhere using a single password, authentication here is device bound.
+Losing a device means losing the private key used to sign in.
 
-For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
+That is why Passwordless.ID allows to register multiple devices per user. It is both more convinient and safer.
 
-```js
-// Makes a redirect to let the user authenticate and authorize your app to read the scope
-const user = await connect.auth({scope: 'openid avatar email'})
-```
+The user can also choose the recovery options it may accept, or how it authorizes to register a new device. Per other registered device, per SMS or per email. The latter one being convinient but less secure.
 
-And can be used to fetch the user profile and `id_token` afterwards.
+Likewise, if your device is stolen or has a risk of being compromised, it can be blocked.
 
-```js
-// Fetch user profile and `id_token`
-const user = await connect.id({scope: 'openid avatar email'})
-```
-
-The `id_token` is a [Json Web Token](https://jwt.io) containing the user profile alongside a signature. This signature can be verified on the server side to prove the user's authenticity.
-
-There is also a [standalone demo](https://passwordless-id.github.io/demo/) if you prefer. Note that it does not work in codepen or similar editor because they are contained within IFrames.
-
-
----
-
-
-Get started now
----------------
-
-You can start using it right out of the box. It is a public service. No account is required, no email and it's free forever!
 
 ---
 
@@ -191,3 +179,22 @@ This was made with love, sweat and considerate thoughts. We strive to make the b
 If you like it too, talk about it to others! Share it with someone! Every little act is of great help to make it succeed. Thank you!
 
 In the case you plan to write a blog article, a tutorial, some news or anything alike, we would be glad to hear from you. Perhaps we can feature it on our blog!
+
+
+---
+
+
+<img class="big-icon" src="img/features/icon-target.svg" />
+
+
+The vision
+----------
+
+"Passwordless.ID" is meant to be a "free public identity provider" with the following philosophy.
+
+- Make the web a safer place
+- Make it easier for developers
+- More comfort and control for users
+
+This is achieved by providing tools and services to delegate the authentication to the Passwordless.ID API.
+

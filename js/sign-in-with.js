@@ -1,43 +1,45 @@
-import connect from 'https://unpkg.com/@passwordless-id/connect'
+import passwordless from 'https://unpkg.com/@passwordless-id/connect'
 
-// The scope indicates what should be read form the profile and must be granted by the user
-const scope = 'openid email avatar'
+// the information requested from the profile
+const scope = 'openid avatar email'
 
-async function login() {
-  // This will perform a redirect and return back here
-  // once the user is signed in and has granted scope
-  connect.auth({scope})
+window.onClickSignIn = () => {
+  // performs a redirect to let the user authenticate and/or authorize this app
+  passwordless.auth({ scope })
+}
+
+window.onClickSignOut = async () => {
+  // performs a redirect to let the user sign out
+  passwordless.logout()
 }
 
 async function init() {
-
-  // Fetch user profile and `id_token`
-  const user = await connect.request({scope})
-
+  // retrieves the user profile and `id_token` if available
+  const user = await passwordless.id({ scope })
   if (user.signedIn && user.scopeGranted) {
-    // User is signed in and has granted scope
-    showUserInfo(user.profile)
-  } else {
-    // User must first sign in or grant scope
-    showLoginButton()  
+    console.log(user)
+    showUser(user)
+  }
+  else {
+    showSignIn()
   }
 }
 
-document.getElementById('login-btn').addEventListener('click', login)
 init()
 
+function showUser(user) {
+  document.getElementById('picture').src = user.profile.picture
+  document.getElementById('nickname').textContent = user.profile.nickname
+  document.querySelector('#output code').textContent = JSON.stringify(user, null, ' ')
 
-function showLoginButton() {
-  document.getElementById('login').className = 'visible'
-  document.getElementById('userinfo').className = 'hidden'
+  document.getElementById('spinner').hidden = true
+  document.getElementById('profile').hidden = false
+  document.getElementById('output').hidden = false
+  document.getElementById('sign-out').hidden = false
+
 }
 
-function showUserInfo(userinfo) {
-  document.getElementById('login').className = 'hidden'
-  document.getElementById('userinfo').className = 'visible'
-  
-  document.querySelector('#userinfo img').src = userinfo.picture
-  document.querySelector('#userinfo h3').textContent = userinfo.nickname ?? 'Error: username missing?!'
-  document.querySelector('#userinfo pre').textContent = JSON.stringify(userinfo, null, 2)
+function showSignIn() {
+  document.getElementById('spinner').hidden = true
+  document.getElementById('sign-in').hidden = false
 }
-
