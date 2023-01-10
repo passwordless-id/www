@@ -28,39 +28,7 @@ Sign in with...
 
 Passwordless.ID is a public identity provider that can be used out-of-the-box and compatible with OAuth2 / OpenID. 
 
-
-<link href="css/sign-in-with.css"  rel="stylesheet" />
-
-<div id="demo">
-<div id="spinner">
-    <span class="spinner-border" role="status"></span>
-    <span class="visually-hidden">Loading...</span>
-</div>
-
-<section id="sign-in" hidden>
-    <p>Sign in with... <b>(Try and click it!)</b></p>
-    <button class="btn btn-light" onclick="onClickSignIn()">
-        <img src="logo/logo-500x125.png" style="height:3rem" />    
-    </button>
-</section>
-
-<section id="profile" class="card shadow profile" hidden>
-    <div class="card-body">
-        <img id="picture"/>
-        <h3 id="nickname">Nickname</h3>
-    </div>
-</section>
-
-<section id="output" class="card shadow container" hidden>
-    <div class="card-body">
-        <pre><code></code></pre>
-    </div>
-</section>
-
-<button id="sign-out" class="btn btn-light" onclick="onClickSignOut()" hidden>Sign Out</button>
-</div>
-
-<script type="module" src="js/sign-in-with.js"></script>
+![passwordless-openid-diagram](img/passwordless-openid-diagram.svg)
 
 For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
 
@@ -176,21 +144,6 @@ Likewise, if your device is stolen or has a risk of being compromised, it can be
 ---
 
 
-<img class="big-icon" src="img/features/customer-experience.svg" />
-
-If you like it, share it!
--------------------------
-
-This was made with love, sweat and considerate thoughts. We strive to make the best possible authentication experience and are glad to hear any feedback.
-
-If you like it too, talk about it to others! Share it with someone! Every little act is of great help to make it succeed. Thank you!
-
-In the case you plan to write a blog article, a tutorial, some news or anything alike, we would be glad to hear from you. Perhaps we can feature it on our blog!
-
-
----
-
-
 <img class="big-icon" src="img/features/icon-target.svg" />
 
 
@@ -204,4 +157,19 @@ The vision
 - More comfort and control for users
 
 This is achieved by providing tools and services to delegate the authentication to the Passwordless.ID API.
+
+
+---
+
+
+<img class="big-icon" src="img/features/customer-experience.svg" />
+
+If you like it, share it!
+-------------------------
+
+This was made with love, sweat and considerate thoughts. We strive to make the best possible authentication experience and are glad to hear any feedback.
+
+If you like it too, talk about it to others! Share it with someone! Every little act is of great help to make it succeed. Thank you!
+
+In the case you plan to write a blog article, a tutorial, some news or anything alike, we would be glad to hear from you. Perhaps we can feature it on our blog!
 
