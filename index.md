@@ -28,7 +28,7 @@ Sign in with...
 
 Passwordless.ID is a public identity provider that can be used out-of-the-box and compatible with OAuth2 / OpenID. 
 
-![passwordless-openid-diagram](img/passwordless-openid-diagram.svg)
+![passwordless-openid-diagram](img/passwordless-openid-diagram.png)
 
 For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
 
