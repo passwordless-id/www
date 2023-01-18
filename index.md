@@ -73,7 +73,7 @@ The combination of both is required in order to authenticate the user.
 You can choose <i>not to use</i> fingerprint/face
 -------------------------------------------------
 
-The user verification is delegated to your platform. If you are uncomfortable with such a mechanism, you can still use a PIN, a password, a swipe pattern configured, or whatever is configured on your device as local authentication mechanism.
+The user verification is delegated to your platform. If you are uncomfortable with such a mechanism, you can still use a PIN, a password, a swipe pattern configured, or whatever is configured on your device as a local authentication mechanism.
 
 
 ---
@@ -99,7 +99,7 @@ Moreover, it also protects against further security threats like password reuse 
 How does it work exactly? 
 -------------------------
 
-The authentication relies on a recent browser protocol called [webauthn](/protocols/webauthn/1_introduction) which is based on [asymetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
+The authentication relies on a recent browser protocol called [WebAuthn](/protocols/webauthn/1_introduction), which is based on [asymmetric cryptography](https://en.m.wikipedia.org/wiki/Public-key_cryptography). 
 
 Upon registration, a cryptographic key pair is generated for the user.
 The private key is stored on the device, protected by local authentication, while the public key is sent to the server.
@@ -113,7 +113,7 @@ When a user wants to authenticate themselves, they must sign a random "challenge
 
 <img class="big-icon" alt="banner" src="img/features/API-Integration.svg" />
 
-OAuh2 / OpenID compatible
+OAuth2 / OpenID compatible
 -------------------------
 
 Passwordless.ID is compatible with both *OAuth2* and *OpenID* protocols. That way, you can use it as a generic OpenID provider for a "Sign in with..." button.
@@ -134,9 +134,9 @@ What if I lose my device?
 Unlike traditional authentication systems that can be accessed from anywhere using a single password, authentication here is device bound.
 Losing a device means losing the private key used to sign in.
 
-That is why Passwordless.ID allows to register multiple devices per user. It is both more convinient and safer.
+That is why Passwordless.ID allows registering multiple devices per user. It is both more convenient and safer.
 
-The user can also choose the recovery options it may accept, or how it authorizes to register a new device. Per other registered device, per SMS or per email. The latter one being convinient but less secure.
+The user can also choose the recovery options it may accept, or how it authorizes registering a new device through another registered device, SMS or email. Email is convenient, but less secure.
 
 Likewise, if your device is stolen or has a risk of being compromised, it can be blocked.
 
