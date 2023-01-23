@@ -32,7 +32,7 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box an
 
 For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
 
-Check out the [standalone demo](https://github.com/passwordless-id/demo) to try it out and the [user guide](usage/sign-in-with) to implement this on your site in 5 minutes! No account necessary!
+Check out the [standalone demo](https://passwordless-id.github.io/demo/) to try it out and the [user guide](usage/sign-in-with) to implement this on your site in 5 minutes! No account necessary!
 
 
 ---
