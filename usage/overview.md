@@ -24,6 +24,6 @@ Using generic OAuth2/OpenID libs
 The PKCE flow
 -------------
 
-On the client side, use the https://github.com/passwordless-id/connect library to obtain the `profile` and `id_token` of the user.
+On the client side, use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library to obtain the `profile` and `id_token` of the user.
 
 This `id_token` can then be sent to the server as a proof of identity.
