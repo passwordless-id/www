@@ -30,9 +30,36 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box an
 
 ![passwordless-openid-diagram](img/passwordless-openid-diagram.png)
 
+<a class="btn btn-primary" href="https://passwordless-id.github.io/demo/">Try it out!</a>
+
 For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
 
-Check out the [standalone demo](https://passwordless-id.github.io/demo/) to try it out and the [user guide](usage/sign-in-with) to implement this on your site in 5 minutes! No account necessary!
+
+---
+
+<img class="big-icon" alt="banner" src="img/features/Thumbs-Up.svg" />
+
+Super easy to use
+-----------------
+
+Use this form of authentication for your website effortlessly.
+This is a public identity provider, so not even an account necessary.
+
+```html
+<a href="https://api.passwordless.id/openid/authorize">Sign In</a>
+```
+
+```js
+const res = await fetch("https://api.passwordless.id/openid/userinfo")
+if(res.ok)
+    alert(await res.json()) // shows profile
+else if(res.status === 401)
+    alert('Please login first')
+else if(res.status === 403)
+    alert('Access denied by the user')
+```
+
+Check out the [user guide](usage/sign-in-with) for more details.
 
 
 ---
