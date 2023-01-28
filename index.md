@@ -30,8 +30,8 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box, c
 
 ![passwordless-openid-diagram](img/passwordless-openid-diagram.png)
 
-<div class="d-grid gap-2 col-6 mx-auto">
-    <a class="btn btn-primary" href="https://passwordless-id.github.io/demo/">Try it out!</a>
+<div class="d-grid gap-2 col-sm-6 mx-auto">
+    <a class="btn btn-primary btn-block" href="https://passwordless-id.github.io/demo/">Try it out!</a>
 </div>
 
 For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
