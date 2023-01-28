@@ -26,40 +26,15 @@ Passwordless
 Sign in with...
 ---------------
 
-Passwordless.ID is a public identity provider that can be used out-of-the-box and compatible with OAuth2 / OpenID. 
+Passwordless.ID is a public identity provider that can be used out-of-the-box, compatible with *OAuth2* and *OpenID*. 
 
 ![passwordless-openid-diagram](img/passwordless-openid-diagram.png)
 
-<a class="btn btn-primary" href="https://passwordless-id.github.io/demo/">Try it out!</a>
+<div class="d-grid gap-2 col-6 mx-auto">
+    <a class="btn btn-primary" href="https://passwordless-id.github.io/demo/">Try it out!</a>
+</div>
 
 For a straightforward and smooth integration, you can use the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library. This library makes it possible to trigger the authentication/authorization using a single call.
-
-
----
-
-<img class="big-icon" alt="banner" src="img/features/Thumbs-Up.svg" />
-
-Super easy to use
------------------
-
-Use this form of authentication for your website effortlessly.
-This is a public identity provider, so not even an account necessary.
-
-```html
-<a href="https://api.passwordless.id/openid/authorize">Sign In</a>
-```
-
-```js
-const res = await fetch("https://api.passwordless.id/openid/userinfo")
-if(res.ok)
-    alert(await res.json()) // shows profile
-else if(res.status === 401)
-    alert('Please login first')
-else if(res.status === 403)
-    alert('Access denied by the user')
-```
-
-Check out the [user guide](usage/sign-in-with) for more details.
 
 
 ---
@@ -134,6 +109,40 @@ The private key is stored on the device, protected by local authentication, whil
 When a user wants to authenticate themselves, they must sign a random "challenge" using their private key. This signature is sent to the server, which verifies it using the user's public key. 
 
 
+---
+
+
+<img class="big-icon" alt="banner" src="img/features/Thumbs-Up.svg" />
+
+By developers, for developers
+-----------------------------
+
+One of the goals of this project is to make it as simple to use as possible.
+You can use this form of authentication for your website right now and effortlessly.
+This is a public identity provider, so not even an account is necessary.
+
+To authenticate and authorize, a single redirect is required.
+
+```html
+<a href="https://api.passwordless.id/openid/authorize?scope=avatar">Sign In</a>
+```
+
+Once the user has signed in and granted the access rights, it will be redirected back to the origin.
+
+Likewise, a single request is enough to optain the user profile.
+
+```js
+const res = await fetch("https://api.passwordless.id/openid/userinfo")
+if(res.ok)
+    alert(await res.json()) // shows profile
+else if(res.status === 401)
+    alert('Please login first')
+else if(res.status === 403)
+    alert('Access denied by the user')
+```
+
+Check out the [user guide](usage/sign-in-with) for more details.
+
 
 ---
 
@@ -162,6 +171,8 @@ Unlike traditional authentication systems that can be accessed from anywhere usi
 Losing a device means losing the private key used to sign in.
 
 That is why Passwordless.ID allows registering multiple devices per user. It is both more convenient and safer.
+
+
 
 The user can also choose the recovery options it may accept, or how it authorizes registering a new device through another registered device, SMS or email. Email is convenient, but less secure.
 
