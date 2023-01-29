@@ -112,7 +112,7 @@ When a user wants to authenticate themselves, they must sign a random "challenge
 ---
 
 
-<img class="big-icon" alt="banner" src="img/features/Thumbs-Up.svg" />
+<img class="big-icon" alt="banner" src="img/features/coder-woman.svg" />
 
 By developers, for developers
 -----------------------------
