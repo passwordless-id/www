@@ -23,9 +23,9 @@ navbar-links:
     - E-Mails vs Usernames: thoughts/emails-vs-usernames
     - User Guidance: thoughts/guidance
   Community:
-    Github: https://github.com/passwordless-id/www
-    Blog: https://blog.passwordless.id
-    Roadmap: https://github.com/orgs/passwordless-id/projects/1
+    - Github: https://github.com/passwordless-id/www
+    - Blog: https://blog.passwordless.id
+    - Roadmap: https://github.com/orgs/passwordless-id/projects/1
     
 #  Protocols:
 #    OAuth2 / OpenID:
