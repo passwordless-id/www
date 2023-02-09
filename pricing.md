@@ -29,7 +29,7 @@ It is our conviction that making it publicly available is the best way to make t
 Sponsors welcome
 ----------------
 
-In order to keep it operating, some funds are necessary. If you want to be listed here and make this service even better, please [sponsor us](https://github.com/orgs/passwordless-id/sponsors)!
+In order to keep it operating, some funds are necessary. If you want to be listed here and make this service even better, please [sponsor us](https://github.com/orgs/passwordless-id/sponsors)! (coming soon)
 
 
 
