@@ -22,7 +22,11 @@ navbar-links:
     - Security & Privacy: protocols/webauthn/4_security
     - E-Mails vs Usernames: thoughts/emails-vs-usernames
     - User Guidance: thoughts/guidance
-  Blog: https://blog.passwordless.id
+  Community:
+    Github: https://github.com/passwordless-id/www
+    Blog: https://blog.passwordless.id
+    Roadmap: https://github.com/orgs/passwordless-id/projects/1
+    
 #  Protocols:
 #    OAuth2 / OpenID:
 #      - Introduction: protocols/oauth2/1_introduction    
