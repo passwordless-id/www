@@ -36,7 +36,6 @@ Signing in
 
 Then comes a native authentication prompt.
 
-TODO: user
 
 ![](screenshots/view-profile-mixed-recovery.png)
 
@@ -55,7 +54,15 @@ Managing devices
 
 ![](screenshots/add-device-before.png)
 
-TODO: that's already available ...just screenshots are missing
+Once you scanned the QR code, you will be able to register your other device directly.
+
+![](screenshots/devices-register.png)
+![](screenshots/devices-triple.png)
+
+If you cannot scan the QR code or open the link in the e-mail, you can also enter the OTP code manually.
+
+![](screenshots/devices-recovery.png)
+![](screenshots/devices-otp-code.png)
 
 Recovery options
 ----------------
