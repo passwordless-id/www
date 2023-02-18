@@ -4,12 +4,8 @@ Screenshots
 <style>
 img {
     display: block;
-    width: 200px;
+    width: 330px;
     margin: 2rem auto;
-    transition: width: 1s;
-}
-img:hover {
-    width: 560px;
 }
 </style>
 
