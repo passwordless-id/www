@@ -4,8 +4,12 @@ Screenshots
 <style>
 img {
     display: block;
-    max-width: 560px;
+    width: 200px;
     margin: 2rem auto;
+    transition: width: 1s;
+}
+img:hover {
+    width: 560px;
 }
 </style>
 
