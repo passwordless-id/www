@@ -9,12 +9,13 @@ author: Arnaud Dagnelies
 navbar-var-length: true
 
 navbar-links:
+  Screenshots: screenshots
   Usage:
     - '"Sign in with" button': usage/sign-in-with 
     - As OpenID provider: usage/openid
     - Verifying an `id_token`: usage/id_token
     - Webauthn Helper Library: usage/webauthn
-  Pricing(free!): pricing
+  Pricing: pricing
   Webauthn:
     - Introduction: protocols/webauthn/1_introduction
     - Registration: protocols/webauthn/2_registration
