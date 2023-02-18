@@ -3,9 +3,9 @@ Screenshots
 
 <style>
 img {
-    display: block;
     width: 330px;
-    margin: 2rem auto;
+    margin: 2rem;
+    vertical-align: middle;
 }
 </style>
 
