@@ -72,10 +72,8 @@ Recovery options
 ![](screenshots/view-profile-no-recovery.png)
 
 
-
-Options and settings
---------------------
-
+E-Mail confirmation and recovery
+--------------------------------
 
 ![](screenshots/email-confirm.png)
 ![](screenshots/email-confirmed.png)
@@ -83,3 +81,8 @@ Options and settings
 ![](screenshots/email-recovery-sent.png)
 ![](screenshots/email-sign-in.png)
 
+
+Options and settings
+--------------------
+
+Coming later
