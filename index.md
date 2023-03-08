@@ -129,7 +129,7 @@ To authenticate and authorize, a single redirect is required.
 
 Once the user has signed in and granted the access rights, it will be redirected back to the origin.
 
-Likewise, a single request is enough to optain the user profile.
+Likewise, a single request is enough to obtain the user profile.
 
 ```js
 const res = await fetch("https://api.passwordless.id/openid/userinfo")
