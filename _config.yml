@@ -9,7 +9,9 @@ author: Arnaud Dagnelies
 navbar-var-length: true
 
 navbar-links:
-  Screenshots: screenshots
+  Docs:
+    - The "big picture": docs/1_big_picture
+    - UI screenshots: screenshots
   Usage:
     - '"Sign in with" button': usage/sign-in-with 
     - As OpenID provider: usage/openid
