@@ -11,7 +11,7 @@ Thanks to such a "Sign in" Button, you will obtain:
 Demo
 ----
 
-https://passwordless-id.github.io/demo/
+[https://passwordless-id.github.io/demo/](https://passwordless-id.github.io/demo/)
 
 This demo has a single "Sign In" button. Upon click it fill trigger the authentication/authorization flow and once completed go back to the originating web page.
 
@@ -20,7 +20,7 @@ Then, the profile will be displayed, and an `id_token` be provided, that can be 
 Code
 ----
 
-The code of the demo is here: https://github.com/passwordless-id/demo
+The code of the demo is [here](https://github.com/passwordless-id/demo).
 
 It uses a library called [@passwordless-id/connect](https://github.com/passwordless-id/connect). This library makes it possible to trigger the authentication/authorization using a single call.
 
@@ -40,7 +40,7 @@ const user = await connect.id({scope: 'openid avatar email'})
 Under the hood
 --------------
 
-Accessing the profile is as simple as calling `GET /userinfo`. See for yourself: https://api.passwordless.id/openid/userinfo
+Accessing the profile is as simple as calling `GET /userinfo`. See for yourself: [https://api.passwordless.id/openid/userinfo](https://api.passwordless.id/openid/userinfo)
 
 The response is something like this:
 
