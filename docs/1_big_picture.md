@@ -1,14 +1,16 @@
 The big picture
 ===============
 
+```mermaid
 flowchart
     example.com <--OpenID / OAuth2--> passwordless.id
     passwordless.id <--WebAuthn / Passkeys--> user[User device]
-
+```
 
 The implicit flow
 -----------------
 
+```mermaid
 sequenceDiagram
     title Implicit flow
     participant server.api
@@ -19,11 +21,12 @@ sequenceDiagram
     example.com->>server.api: /do-something <br/> Authorization: Bearer {{id_token}}
     server.api->>server.api: Validate id_token
     server.api->>example.com: OK
-
+```
 
 The authorization code flow
 ---------------------------
 
+```mermaid
 sequenceDiagram
     title Authorization code flow
     example.com->>passwordless.id: Redirect to /authorize?...
@@ -39,4 +42,4 @@ sequenceDiagram
         Note over example.com: ...or valide the `id_token` (profile as JWT) directly.
     end
     example.com->>-example.com: Redirects /welcome
-    
+```
