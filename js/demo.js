@@ -1,4 +1,4 @@
-import * as passwordless from './passwordless.js'
+import { client } from 'https://unpkg.com/@passwordless-id/webauthn'
 
  const app = new Vue({
     el: '#app',
@@ -6,7 +6,7 @@ import * as passwordless from './passwordless.js'
       username: null,
       isRegistered: false,
       isAuthenticated: false,
-      isExternal: false
+      isRoaming: false
     },
     methods: {
       async checkIsRegistered() {
@@ -14,7 +14,7 @@ import * as passwordless from './passwordless.js'
         this.isRegistered = !!window.localStorage.getItem(this.username)
       },
       async register() {
-        let res = await passwordless.register(this.username, window.crypto.randomUUID(),{authType: this.isExternal ? 'extern' : 'auto'})
+        let res = await client.register(this.username, window.crypto.randomUUID(), {authenticatorType: this.isRoaming ? 'roaming' : 'auto'})
         this.$buefy.toast.open({
             message: 'Registered!',
             type: 'is-success'
@@ -28,7 +28,7 @@ import * as passwordless from './passwordless.js'
       },
       async login() {
         let credentialId = window.localStorage.getItem(this.username)
-        let res = await passwordless.login([credentialId], window.crypto.randomUUID(), {isExternal: this.isExternal})
+        let res = await client.login([credentialId], window.crypto.randomUUID(), {authenticatorType: this.isRoaming ? 'roaming' : 'auto'})
         console.log(res)
 
         this.isAuthenticated = true;

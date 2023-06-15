@@ -22,10 +22,10 @@
   <br/>
   <template v-if="!isAuthenticated">
     <b-field>
-      <b-input v-model="username" placeholder="Username or E-Mail" @input="checkIsRegistered()"></b-input>
+      <b-input name="username" v-model="username" placeholder="Username or E-Mail" @input="checkIsRegistered()" autocomplete="webauthn username"></b-input>
     </b-field>
     <b-field>
-      <b-checkbox v-model="isExternal">Use extern authenticator</b-checkbox>
+      <b-checkbox v-model="isRoaming">Use roaming authenticator</b-checkbox>
     </b-field>
     <div>
       <b-button type="is-primary" @click="register()" :disabled="!username">Register device</b-button>
