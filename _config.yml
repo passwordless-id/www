@@ -1,5 +1,5 @@
 #remote_theme: dagnelies/beautiful-jekyll
-remote_theme: daattali/beautiful-jekyll
+remote_theme: https://github.com/daattali/beautiful-jekyll
 #remote_theme: just-the-docs/just-the-docs
 
 title: Passwordless
