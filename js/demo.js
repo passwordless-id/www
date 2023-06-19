@@ -28,7 +28,7 @@ import { client } from 'https://unpkg.com/@passwordless-id/webauthn'
       },
       async login() {
         let credentialId = window.localStorage.getItem(this.username)
-        let res = await client.login([credentialId], window.crypto.randomUUID(), {authenticatorType: this.isRoaming ? 'roaming' : 'auto'})
+        let res = await client.authenticate([credentialId], window.crypto.randomUUID(), {authenticatorType: this.isRoaming ? 'roaming' : 'auto'})
         console.log(res)
 
         this.isAuthenticated = true;
