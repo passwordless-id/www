@@ -4,7 +4,11 @@ Logos, icons, and banners
 Logos
 -----
 
-![Logo-svg](../logo/logo-500x125.png)
+### SVG
+
+![Logo-svg](../logo/logo-500x125.svg)
+
+### PNG
 
 ![Logo-png](../logo/logo-500x125.png)
 
@@ -12,17 +16,17 @@ Logos
 Icons
 -----
 
-![icon-32](../logo/logo-32.png)
+(32x32) ![icon-32](../logo/logo-32.png)
 
-![icon-64](../logo/logo-64.png)
+(64x64) ![icon-64](../logo/logo-64.png)
 
-![icon-128](../logo/logo-128.png)
+(128x128)![icon-128](../logo/logo-128.png)
 
-![icon-256](../logo/logo-256.png)
+(256x256) ![icon-256](../logo/logo-256.png)
 
-![icon-512](../logo/logo-512.png)
+(512x512) ![icon-512](../logo/logo-512.png)
 
-![icon-svg](../logo/logo.svg)
+(svg) ![icon-svg](../logo/logo.svg)
 
 
 Banners
