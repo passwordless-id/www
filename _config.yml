@@ -26,6 +26,7 @@ navbar-links:
     - E-Mails vs Usernames: thoughts/emails-vs-usernames
     - User Guidance: thoughts/guidance
   Community:
+    - Logos, icons & banners: community/logos_icons_banners.md
     - Discord: https://discord.gg/v73cHHnqzZ
     - Github: https://github.com/passwordless-id/www
     - Blog: https://blog.passwordless.id
