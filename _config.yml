@@ -12,16 +12,18 @@ navbar-links:
   Docs:
     - The "big picture": docs/1_big_picture
     - UI screenshots: screenshots
+    - OpenID configuration: usage/openid
+#    - Verifying an `id_token`: usage/id_token
   Usage:
-    - '"Sign in with" button': usage/sign-in-with 
-    - As OpenID provider: usage/openid
-    - Verifying an `id_token`: usage/id_token
-    - Webauthn Helper Library: usage/webauthn
+    - Plain HTML demo: https://github.com/passwordless-id/demo
+    - FastAPI demo: https://github.com/passwordless-id/fast-api-demo
+    - Spring Boot demo: https://github.com/passwordless-id/spring-boot-demo
   Pricing: pricing
   Webauthn:
     - Introduction: protocols/webauthn/1_introduction
     - Registration: protocols/webauthn/2_registration
     - Authentication: protocols/webauthn/3_authentication
+    - Webauthn Helper Library: usage/webauthn
     - Security & Privacy: protocols/webauthn/4_security
     - E-Mails vs Usernames: thoughts/emails-vs-usernames
     - User Guidance: thoughts/guidance
