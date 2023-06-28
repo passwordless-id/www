@@ -1,6 +1,6 @@
 ---
 title: Passwordless
-subtitle: Authentication using TouchID or FaceID for everyone. Less passwords, more security!
+subtitle: Authentication using TouchID or FaceID for everyone. Get rid of passwords, boost security!
 ---
 
 <link rel="stylesheet" href="index.css">
@@ -9,7 +9,7 @@ Passwordless
 ============
 
 <center>
-> Less passwords, more security!
+> Get rid of passwords, boost security!
 </center>
 
 ![Banner](img/banner-biometric-auth.svg)
