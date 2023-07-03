@@ -35,9 +35,7 @@ These buttons are simply links.
 
 <div class="d-grid gap-2 col-sm-6 mx-auto">
     <a class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/authorize?scope=openid+email+avatar&response_type=id_token&client_id=https%3A%2F%2Fpasswordless.id&redirect_uri=https%3A%2F%2Fpasswordless.id">Sign in</a>
-</div>
-<div class="d-grid gap-2 col-sm-6 mx-auto">
-    <a class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/logout">Sign out</a>
+    <a class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/logout?redirect_uri=https%3A%2F%2Fpasswordless.id">Sign out</a>
 </div>
 
 For more information on how this works, consult the [documentation](https://passwordless.id/docs/1_big_picture) or to get started quickly, take a look at the "Usage" demos.
