@@ -1,4 +1,4 @@
-import { client } from 'https://unpkg.com/@passwordless-id/webauthn'
+import { client } from 'https://unpkg.com/@passwordless-id/webauthn@1.2.4/dist/webauthn.min.js'
 
  const app = new Vue({
     el: '#app',
