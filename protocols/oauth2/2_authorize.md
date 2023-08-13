@@ -4,8 +4,6 @@ The authorization endpoint triggers the authentication and authentication on pro
 
 If the user is already authenticated and has already granted permissions, the callback might be instantly called, resulting in SSO without user interaction.
 
-Certainly! Here are the tables representing the mandatory and optional parameters for the OAuth 2.0 Authorization Code Flow:
-
 ### Mandatory Parameters
 
 | Parameter      | Description                                                                                     |
