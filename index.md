@@ -1,6 +1,6 @@
 ---
 title: Passwordless
-subtitle: Authentication using TouchID or FaceID for everyone. Dump passwords, boost security!
+subtitle: Authentication with TouchID or FaceID for everyone. Ditch passwords, boost security!
 ---
 
 <link rel="stylesheet" href="index.css">
@@ -30,8 +30,8 @@ Passwordless.ID is a public identity provider that can be used out-of-the-box, c
 
 ![passwordless-openid-diagram](img/passwordless-openid-diagram.png)
 
-It's really simply. Authentication can be triggered using a simple link, without the need to configure anything beforehand.
-These buttons are simply links.
+It's really simple. Authentication can be triggered by a simple link, with no configuration required.
+These buttons are just links.
 
 <div class="d-grid gap-2 col-sm-6 mx-auto">
     <a class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/authorize?scope=openid+email+avatar&response_type=id_token&client_id=https%3A%2F%2Fpasswordless.id&redirect_uri=https%3A%2F%2Fpasswordless.id">Sign in</a>
@@ -50,9 +50,9 @@ Lastly, there is also the [@passwordless-id/connect](https://github.com/password
 Your fingerprint/face never leaves your device
 ----------------------------------------------
 
-The biometric verification uses the *local authentication* mechamism from your device. On the device, these biometric information is strongly protected and never exposed.
+Biometric verification uses the *local authentication* mechamism of your device. On the device, these biometric information is strongly protected and never exposed.
 
-The verification is a safety measure used to prove you are you, then create or access cryptographic keys stored on your device. These keys, also known as passkeys, are in turn used for the authentication mechanism.
+Verification is a safety measure used to prove that you are you, and then to create or access cryptographic keys stored on your device. These keys, also known as passkeys, are in turn used for the authentication mechanism.
 
 
 ---
@@ -60,15 +60,15 @@ The verification is a safety measure used to prove you are you, then create or a
 
 <img class="big-icon" alt="banner" src="img/features/Protection.svg" />
 
-More secure than passwords
+Safer than passwords
 --------------------------
 
 It is basically *two factor authentication* in a *single step*.
 
-- The first factor is something you have. 
-The authentication only works on registered devices. 
+- The first factor is something you own. 
+Authentication only works on registered devices. 
 - The second factor is something you are, or something you know. 
-A biometric verification, or the device PIN code, is required.
+It requires biometric verification or the device PIN code.
 
 The combination of both is required in order to authenticate the user.
 
@@ -80,7 +80,7 @@ The combination of both is required in order to authenticate the user.
 You can choose <i>not to use</i> fingerprint/face
 -------------------------------------------------
 
-The user verification is delegated to your platform. If you are uncomfortable with such a mechanism, you can still use a PIN, a password, a swipe pattern configured, or whatever is configured on your device as a local authentication mechanism.
+User verification is delegated to your platform. If you are uncomfortable with such a mechanism, you can still use a PIN, a password, a configured swipe pattern, or whatever is configured on your device as a local authentication mechanism.
 
 
 ---
@@ -91,11 +91,11 @@ The user verification is delegated to your platform. If you are uncomfortable wi
 It protects you from phishing
 -----------------------------
 
-Phishing usually involves the user into typing its password into a fake website, or other approaches like social engineering. It is the most common way to hack accounts.
+Phishing usually involves tricking a user into entering their password into a fake website, or other approaches such as social engineering. It is the most common way of hacking accounts.
 
 By getting rid of passwords, you get rid of phishing! Great, right?
 
-Moreover, it also protects against further security threats like password reuse and even data breaches! It is one of the most secure mechanisms available.
+It also protects against other security threats like password reuse and even data breaches! It is one of the most secure mechanisms out there.
 
 
 ---
@@ -111,7 +111,7 @@ The authentication relies on a recent browser protocol called [WebAuthn](/protoc
 Upon registration, a cryptographic key pair is generated for the user.
 The private key is stored on the device, protected by local authentication, while the public key is sent to the server.
 
-When a user wants to authenticate themselves, they must sign a random "challenge" using their private key. This signature is sent to the server, which verifies it using the user's public key. 
+When a user wants to authenticate themselves, they must sign a random "challenge" using their private key. This signature is sent to the server, which verifies it against the user's public key. 
 
 
 ---
@@ -122,11 +122,11 @@ When a user wants to authenticate themselves, they must sign a random "challenge
 By developers, for developers
 -----------------------------
 
-One of the goals of this project is to make it as simple to use as possible.
-You can use this form of authentication for your website right now and effortlessly.
+One of the goals of this project is to make it as easy to use as possible.
+You can use this form of authentication for your website right now, with no hassle.
 This is a public identity provider, so not even an account is necessary.
 
-To authenticate and authorize, a single redirect is required.
+A single redirect is required for authentication and authorization.
 
 ```html
 <a href="https://api.passwordless.id/openid/authorize?scope=avatar">Sign In</a>
@@ -159,7 +159,7 @@ OAuth2 / OpenID compatible
 
 Passwordless.ID is compatible with both *OAuth2* and *OpenID* protocols. That way, you can use it as a generic OpenID provider for a "Sign in with..." button.
 
-If you are familiar with OAuth, you probably know that it is an "authorization" protocol. Usually, the API also offer a set of operations to grant permission to. In the case of Passwordless.ID, the only operation is accessing (part of) the user profile.
+If you are familiar with OAuth, you probably know that it is an "authorization" protocol. Usually, the API also provides a set of operations to grant permission to. In the case of Passwordless.ID, the only operation is accessing (part of) the user profile.
 
 If you want to add Passwordless.ID as an additional social login provider using some predefined library, check out our [OAuth2/OpenID guide](/usage/openid)! 
 
@@ -172,16 +172,16 @@ If you want to add Passwordless.ID as an additional social login provider using 
 What if I lose my device? 
 -------------------------
 
-Unlike traditional authentication systems that can be accessed from anywhere using a single password, authentication here is device bound.
+Unlike traditional authentication systems that can be accessed from anywhere with a single password, authentication here is tied to the device.
 Losing a device means losing the private key used to sign in.
 
-That is why Passwordless.ID allows registering multiple devices per user. It is both more convenient and safer.
+This is why Passwordless.ID allows multiple devices per user to be registered. This is both more convenient and more secure.
 
 
 
-The user can also choose the recovery options it may accept, or how it authorizes registering a new device through another registered device, SMS or email. Email is convenient, but less secure.
+The user can also choose which recovery options they accept, or how they authorize the registration of a new device through another registered device, SMS or email. Email is convenient but less secure.
 
-Likewise, if your device is stolen or has a risk of being compromised, it can be blocked.
+Similarly, if your device is stolen or at risk of being compromised, it can be blocked.
 
 
 ---
@@ -197,7 +197,7 @@ The vision
 
 - Make the web a safer place
 - Make it easier for developers
-- More comfort and control for users
+- Provide more convenience and control for users
 
 This is achieved by providing tools and services to delegate the authentication to the Passwordless.ID API.
 
@@ -210,9 +210,9 @@ This is achieved by providing tools and services to delegate the authentication 
 If you like it, share it!
 -------------------------
 
-This was made with love, sweat and considerate thoughts. We strive to make the best possible authentication experience and are glad to hear any feedback.
+This was made with love, sweat, and thoughtfulness. We strive to provide the best authentication experience possible and welcome any feedback.
 
-If you like it too, talk about it to others! Share it with someone! Every little act is of great help to make it succeed. Thank you!
+If you like it, tell others about it! Share it with someone! Every little act helps make it a success. Thank you very much!
 
-In the case you plan to write a blog article, a tutorial, some news or anything alike, we would be glad to hear from you. Perhaps we can feature it on our blog!
+If you are planning to write a blog article, tutorial, news or something similar, we would love to hear from you. Maybe we can publish it on our blog!
 
