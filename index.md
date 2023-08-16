@@ -9,7 +9,7 @@ Passwordless
 ============
 
 <center>
-> Dump passwords, boost security!
+> Ditch passwords, boost security!
 </center>
 
 ![Banner](img/banner-biometric-auth.svg)
