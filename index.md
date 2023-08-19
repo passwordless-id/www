@@ -66,7 +66,7 @@ Safer than passwords
 It is basically *two factor authentication* in a *single step*.
 
 - The first factor is something you own. 
-Authentication only works on registered devices. 
+Authentication only works on allowed devices. 
 - The second factor is something you are, or something you know. 
 It requires biometric verification or the device PIN code.
 
@@ -95,7 +95,20 @@ Phishing usually involves tricking a user into entering their password into a fa
 
 By getting rid of passwords, you get rid of phishing! Great, right?
 
-It also protects against other security threats like password reuse and even data breaches! It is one of the most secure mechanisms out there.
+As long as you don't possess an allowed device, you will not be able to sign in.
+
+
+---
+
+
+<img class="big-icon" src="img/features/icon-device.svg" />
+
+Multi-device and platform neutral
+---------------------------------
+
+Authentication only works for allowed devices, but of course you can register another device simply by scanning a QR code or clicking on a link. Each device can then be used to authenticate directly using its own local authentication mechanism (for example TouchID on your phone, and PIN on your laptop).
+
+Depending on the platform you use, your passkeys *may* also be automatically synced into the cloud by its built-in password manager, propagating to all devices of the same platform (Windows, Android or iOS).
 
 
 ---
@@ -169,18 +182,12 @@ If you want to add Passwordless.ID as an additional social login provider using 
 
 <img class="big-icon" src="img/features/life-buoy.svg" />
 
-What if I lose my device? 
--------------------------
+What if I lose my (single) device? 
+----------------------------------
 
-Unlike traditional authentication systems that can be accessed from anywhere with a single password, authentication here is tied to the device.
-Losing a device means losing the private key used to sign in.
+If you have only a single device registered, losing it *may* cause locking yourself out of your account. This happens if your platform's built-in password manager has not synced the passwordless credential in the cloud. In this case, the only private key used to sign in would be lost.
 
-This is why Passwordless.ID allows multiple devices per user to be registered. This is both more convenient and more secure.
-
-
-
-The user can also choose which recovery options they accept, or how they authorize the registration of a new device through another registered device, SMS or email. Email is convenient but less secure.
-
+Nevertheless, the user can also choose which recovery options they accept. From the convinient but less secure e-mail, to more secure ones like SMS and Backup codes.
 Similarly, if your device is stolen or at risk of being compromised, it can be blocked.
 
 
