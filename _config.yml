@@ -9,15 +9,16 @@ author: Arnaud Dagnelies
 navbar-var-length: true
 
 navbar-links:
+  Getting Started:
+    - Javascript - Vanilla: https://github.com/passwordless-id/demo
+    - Python - FastAPI: https://github.com/passwordless-id/fast-api-demo
+    - Java - Spring Boot: https://github.com/passwordless-id/spring-boot-demo
+    - Want more?: getting_started/want_more
   Docs:
     - The "big picture": docs/1_big_picture
     - UI screenshots: screenshots
     - OpenID configuration: usage/openid
 #    - Verifying an `id_token`: usage/id_token
-  Usage:
-    - Plain HTML demo: https://github.com/passwordless-id/demo
-    - FastAPI demo: https://github.com/passwordless-id/fast-api-demo
-    - Spring Boot demo: https://github.com/passwordless-id/spring-boot-demo
   Pricing: pricing
   Webauthn:
     - Introduction: protocols/webauthn/1_introduction
