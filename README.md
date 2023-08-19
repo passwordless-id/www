@@ -3,7 +3,7 @@ Passwordless.ID
 
 This repository contains the website of https://passwordless.id
 
-Overview of the content:
+TODO: Refactor website according to following content:
 
 - index.md / Front page
 - Getting Started
@@ -12,6 +12,7 @@ Overview of the content:
   - Java / Spring Boot
   - C# (TODO)
   - PHP (TODO)
+  - Want more?
 - Docs
   - Introduuction
   - Basic usage
