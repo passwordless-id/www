@@ -14,6 +14,11 @@ Passwordless
 
 ![Banner](img/banner-biometric-auth.svg)
 
+Passwordless.ID is a public identity provider that can be used out-of-the-box, compatible with *OAuth2* and *OpenID*. 
+
+![passwordless-openid-diagram](img/passwordless-openid-diagram.png)
+
+
 
 ---
 
@@ -23,12 +28,8 @@ Passwordless
 Sign in with...
 ---------------
 
-Passwordless.ID is a public identity provider that can be used out-of-the-box, compatible with *OAuth2* and *OpenID*. 
-
-![passwordless-openid-diagram](img/passwordless-openid-diagram.png)
-
 It's really simple. Authentication can be triggered by a simple link, with no configuration required.
-These buttons are just links.
+Try it, the following buttons are just links.
 
 <div class="d-grid gap-2 col-sm-6 mx-auto">
     <script type="module" src="js/sign-in-with.js"></script>
