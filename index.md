@@ -15,9 +15,6 @@ Passwordless
 ![Banner](img/banner-biometric-auth.svg)
 
 
-<iframe src="form.html" style="width:100%; height:300px; border:none;"></iframe>
-
-
 ---
 
 
@@ -34,8 +31,15 @@ It's really simple. Authentication can be triggered by a simple link, with no co
 These buttons are just links.
 
 <div class="d-grid gap-2 col-sm-6 mx-auto">
-    <a class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/authorize?scope=openid+email+avatar&response_type=id_token&client_id=https%3A%2F%2Fpasswordless.id&redirect_uri=https%3A%2F%2Fpasswordless.id">Sign in</a>
-    <a class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/logout?redirect_uri=https%3A%2F%2Fpasswordless.id">Sign out</a>
+    <script src="js/sign-in-with.js"></script>
+    <a id="sign-in" class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/authorize?scope=openid+email+avatar&response_type=id_token&client_id=https%3A%2F%2Fpasswordless.id&redirect_uri=https%3A%2F%2Fpasswordless.id">Sign in</a>
+    <div id="profile" hidden>
+        <div>
+            <img id="portrait" /><span id="nickname"></span>
+        </div>
+        <a id="account" class="btn btn-primary btn-block disabled" href="https://ui.passwordless.id">Account profile</a>
+        <a id="sign-out" class="btn btn-primary btn-block disabled" href="https://api.passwordless.id/openid/logout?redirect_uri=https%3A%2F%2Fpasswordless.id">Sign out</a>
+    </div>
 </div>
 
 For more information on how this works, consult the [documentation](https://passwordless.id/docs/1_big_picture) or to get started quickly, take a look at the "Usage" demos.
