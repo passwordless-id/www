@@ -31,7 +31,7 @@ It's really simple. Authentication can be triggered by a simple link, with no co
 These buttons are just links.
 
 <div class="d-grid gap-2 col-sm-6 mx-auto">
-    <script src="js/sign-in-with.js"></script>
+    <script type="module" src="js/sign-in-with.js"></script>
     <a id="sign-in" class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/authorize?scope=openid+email+avatar&response_type=id_token&client_id=https%3A%2F%2Fpasswordless.id&redirect_uri=https%3A%2F%2Fpasswordless.id">Sign in</a>
     <div id="profile" hidden>
         <div>
