@@ -34,11 +34,12 @@ These buttons are just links.
     <script type="module" src="js/sign-in-with.js"></script>
     <a id="sign-in" class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/authorize?scope=openid+email+avatar&response_type=id_token&client_id=https%3A%2F%2Fpasswordless.id&redirect_uri=https%3A%2F%2Fpasswordless.id">Sign in</a>
     <div id="profile" hidden>
-        <div>
-            <img id="portrait" /><span id="nickname"></span>
+        <div class="m-3" style="display:flex; align-items:center; gap: 1rem">
+            <img id="portrait" class="rounded-circle" style="height:100px" />
+            <span id="nickname"></span>
         </div>
-        <a id="account" class="btn btn-primary btn-block disabled" href="https://ui.passwordless.id">Account profile</a>
-        <a id="sign-out" class="btn btn-primary btn-block disabled" href="https://api.passwordless.id/openid/logout?redirect_uri=https%3A%2F%2Fpasswordless.id">Sign out</a>
+        <a id="account" class="btn btn-primary btn-block" href="https://ui.passwordless.id">Account profile</a>
+        <a id="sign-out" class="btn btn-primary btn-block" href="https://api.passwordless.id/openid/logout?redirect_uri=https%3A%2F%2Fpasswordless.id">Sign out</a>
     </div>
 </div>
 
