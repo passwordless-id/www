@@ -37,12 +37,20 @@ If the user is already authenticated and has already granted permissions, the ca
 
 ### Sample request
 
-GET /authorize?
-response_type=code
-&client_id=YOUR_CLIENT_ID
-&redirect_uri=https://yourapp.com/callback
-&scope=openid email
-&state=UNIQUE_STATE_VALUE
-&code_challenge=YOUR_CODE_CHALLENGE
-&code_challenge_method=S256
+    GET /authorize
+          ?response_type=code
+          &client_id=YOUR_CLIENT_ID
+          &redirect_uri=https://yourapp.com/callback
+          &scope=openid email
+          &state=UNIQUE_STATE_VALUE
+          &code_challenge=YOUR_CODE_CHALLENGE
+          &code_challenge_method=S256
+
+
+    ...user signs in...
+    ...user grants `YOUR_CLIENT_ID` permission to access `openid email`...
+
+    HTTP 302 - https://yourapp.com/callback
+                  ?code=...
+                  &state=...
 
