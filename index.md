@@ -5,8 +5,8 @@ subtitle: Authentication with TouchID or FaceID for everyone. Ditch passwords, b
 
 <link rel="stylesheet" href="index.css">
 
-Passwordless
-============
+Passwordless.ID
+===============
 
 <center>
 > Ditch passwords, boost security!
