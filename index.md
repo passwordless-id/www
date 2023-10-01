@@ -1,5 +1,5 @@
 ---
-title: Passwordless
+title: Passwordless.ID
 subtitle: Authentication with TouchID or FaceID for everyone. Ditch passwords, boost security!
 ---
 
