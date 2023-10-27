@@ -9,14 +9,7 @@ author: Arnaud Dagnelies
 navbar-var-length: true
 
 navbar-links:
-  F.A.Q.:
-    - Is it "production ready"?: faq/TODO
-    - Is it scalable?: faq/TODO
-    - Why is it better than rolling your own?: faq/TODO
-    - How can this be free?: faq/TODO
-    - Is it secure?: faq/TODO
-    - What about privacy?: faq/TODO
-    - What if I loose my device?: faq/TODO
+  F.A.Q.: faq/index
   Getting Started:
     - Javascript - Vanilla: getting_started/javascript_spa
     - Python - FastAPI: https://github.com/passwordless-id/fast-api-demo
