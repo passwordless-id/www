@@ -7,8 +7,8 @@ Getting Started - Javascript
 - The demo can be seen here: https://passwordless-id.github.io/demo/
 - The full source code is available here: https://github.com/passwordless-id/demo
 
-1. Create an HTML page
-----------------------
+Create an HTML page
+-------------------
 
 ```html
 <!DOCTYPE html>
@@ -40,8 +40,8 @@ Getting Started - Javascript
 ```
 
 
-2. Trigger the sign-in
-----------------------
+Trigger the sign-in
+--------------------
 
 It uses the OAuth2 / OpenID flow using the [@passwordless-id/connect](https://github.com/passwordless-id/connect) library.
 
@@ -75,8 +75,8 @@ async function init() {
 init()
 ```
 
-3. Show the profile
--------------------
+Show the profile
+----------------
 
 The retrieved `user` has the following structure.
 
@@ -94,10 +94,10 @@ The retrieved `user` has the following structure.
 }
 ```
 
-4. Trigger the sign-out
------------------------
+Trigger the sign-out
+--------------------
 
-5. Using the token for API calls
---------------------------------
+Using the token for API calls
+-----------------------------
 
 Once you obtain the user, you can also send the `token_id` to your server API as proof of the user's authenticity. This is a Json Web Token containing a signature that can be verified by common libraries.
