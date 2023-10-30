@@ -9,8 +9,9 @@ author: Arnaud Dagnelies
 navbar-var-length: true
 
 navbar-links:
+  F.A.Q.: faq/index
   Getting Started:
-    - Javascript - Vanilla: https://github.com/passwordless-id/demo
+    - Javascript - Vanilla: getting_started/javascript_spa
     - Python - FastAPI: https://github.com/passwordless-id/fast-api-demo
     - Java - Spring Boot: https://github.com/passwordless-id/spring-boot-demo
     - Want more?: getting_started/want_more
@@ -20,14 +21,22 @@ navbar-links:
     - OpenID configuration: usage/openid
 #    - Verifying an `id_token`: usage/id_token
   Pricing: pricing
-  Webauthn:
-    - Introduction: protocols/webauthn/1_introduction
-    - Registration: protocols/webauthn/2_registration
-    - Authentication: protocols/webauthn/3_authentication
-    - Webauthn Helper Library: usage/webauthn
-    - Security & Privacy: protocols/webauthn/4_security
-    - E-Mails vs Usernames: thoughts/emails-vs-usernames
-    - User Guidance: thoughts/guidance
+  Protocols:
+    OAuth2:
+      - Introduction: protocols/oauth2/1_introduction
+      - /authorize: protocols/oauth2/2_authorize
+      - /token: protocols/oauth2/3_token
+    OpenID:
+      - Introduction: TODO
+      - /authorize: TODO
+    Webauthn:
+      - Introduction: protocols/webauthn/1_introduction
+      - Registration: protocols/webauthn/2_registration
+      - Authentication: protocols/webauthn/3_authentication
+      - Webauthn Helper Library: usage/webauthn
+      - Security & Privacy: protocols/webauthn/4_security
+      - E-Mails vs Usernames: thoughts/emails-vs-usernames
+      - User Guidance: thoughts/guidance
   Community:
     - Logos, icons & banners: community/logos_icons_banners
     - Discord: https://discord.gg/v73cHHnqzZ
