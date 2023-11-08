@@ -7,6 +7,7 @@ Getting Started - Javascript
 - The demo can be seen here: https://passwordless-id.github.io/demo/
 - The full source code is available here: https://github.com/passwordless-id/demo
 
+
 Create an HTML page
 -------------------
 
