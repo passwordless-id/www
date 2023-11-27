@@ -3,13 +3,17 @@ The big picture
 
 With so many protocols and tools, it's not always easy to have a clear understanding of authentication related technologies. The goal of this overview is to provide a clear understanding of what passwordless.id is, and how to interact with it.
 
-
-![big_picture](big_picture.svg)
-
+```mermaid
+flowchart
+    example.com <--OpenID / OAuth2--> passwordless.id
+    passwordless.id <--WebAuthn / Passkeys--> user[User device]
+```
 
 Passwordless.ID is an "identity provider". It authenticates the user, manages the user profile, its registered devices and ensures 2FA (two factor authentication). In other words, Passwordless.ID takes care of *authentication*, using the new WebAuthn protocol, also known as passkeys, in order to provide a smoother user experience while being more secure.
 
-Passwordless.ID also allows third party webapps to read the user's profile, as long as the user gives its consent of course. Websites can request to read the user profile using the OpenID / OAuth2 protocol, which can be summarized as "Dear passwordless.id user, please allow me to read your nickname, email...". OAuth2 is the *authorization* protocol, while the OpenID protocol, built on top, offers a set of standards regarding how the profile should look like, how to discover the proper URLs to call, etc. That way, the user's profile can be read similarly from various identity providers like Microsoft, Google, Apple.
+Passwordless.ID also enables third-party webapps to read the user's profile, as long as the user gives its consent of course. Websites can request to read the user profile using the OpenID / OAuth2 protocol, which can be summarized as "Dear passwordless.id user, please allow me to read your nickname, email...". OAuth2 is the *authorization* protocol, while the OpenID protocol, built on top, offers a set of standards regarding how the profile should look like, how to discover the proper URLs to call, etc. That way, the user's profile can be read similarly from various identity providers like Microsoft, Google, Apple.
+
+![big_picture](big_picture.svg)
 
 
 Flows
