@@ -44,3 +44,6 @@ request_uri_parameter_supported | OPTIONAL | Boolean value specifying whether th
 require_request_uri_registration | OPTIONAL | Boolean value specifying whether the OP requires any request_uri values used to be pre-registered using the request_uris registration parameter. Pre-registration is REQUIRED when the value is true. If omitted, the default value is false.
 op_policy_uri | OPTIONAL | URL that the OpenID Provider provides to the person registering the Client to read about the OP's requirements on how the Relying Party can use the data provided by the OP. The registration process SHOULD display this URL to the person registering the Client if it is given.
 op_tos_uri | OPTIONAL | URL that the OpenID Provider provides to the person registering the Client to read about the OpenID Provider's terms of service. The registration process SHOULD display this URL to the person registering the Client if it is given.
+
+
+See [specifications](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) for further details. 
