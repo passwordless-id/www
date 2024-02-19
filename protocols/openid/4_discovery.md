@@ -9,8 +9,6 @@ Her are the parameters it can contain.
 
 Parameter | Value | Description
 ----------|-------|------------
-Parameter | Value | Description
-----------|-------|------------
 issuer | **REQUIRED** | URL using the https scheme with no query or fragment components that the OP asserts as its Issuer Identifier. If Issuer discovery is supported (see Section 2), this value MUST be identical to the issuer value returned by WebFinger. This also MUST be identical to the iss Claim value in ID Tokens issued from this Issuer.
 authorization_endpoint | **REQUIRED** | URL of the OP's OAuth 2.0 Authorization Endpoint [OpenID.Core]. This URL MUST use the https scheme and MAY contain port, path, and query parameter components.
 token_endpoint | **REQUIRED** | URL of the OP's OAuth 2.0 Token Endpoint [OpenID.Core]. This URL MUST use the https scheme and MAY contain port, path, and query parameter components.
