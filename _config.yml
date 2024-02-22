@@ -25,6 +25,7 @@ navbar-links:
     - Introduction: protocols/openid/1_introduction
     - /authorize: protocols/openid/2_authorize
     - /token: protocols/openid/3_token
+    - Discovery: protocols/openid/4_discovery
   Webauthn:
     - Introduction: protocols/webauthn/1_introduction
     - Registration: protocols/webauthn/2_registration
