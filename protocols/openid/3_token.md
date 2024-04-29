@@ -10,6 +10,8 @@ RFC: https://datatracker.ietf.org/doc/html/rfc6749
 
 **Refresh token**
 
+| Parameter     | Description                                          |
+| ------------- | ---------------------------------------------------- |
 | `client_id`   | The unique identifier of the client making the request. |
 | `client_secret` | The secret key or password associated with the client, used for client authentication. |
 | `username`    | The resource owner's username (for the "password" grant type). |
