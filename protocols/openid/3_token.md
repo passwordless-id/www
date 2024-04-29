@@ -4,7 +4,7 @@ RFC: https://datatracker.ietf.org/doc/html/rfc6749
 
 | Parameter     | Description                                          |
 | ------------- | ---------------------------------------------------- |
-| `grant_type`  | The type of grant requested (e.g., "authorization_code", "password", "client_credentials"). |
+| `grant_type`  | The type of grant requested (e.g., "authorization_code", "refresh_token", "password", "client_credentials"). |
 | `redirect_uri` | The redirection URI to which the authorization server will send the user-agent after the user grants/denies consent. |
 | `code`        | The authorization code received from the authorization server (for the "authorization_code" grant type). |
 
