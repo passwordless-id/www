@@ -61,7 +61,7 @@ As of speaking, Windows, Android, Linux and USB keys do use device-bound credent
 On the opposite, Apple always syncs the credentials on all your devices, like password managers.
 
 
-What if I loose my device?
+What if I lose my device?
 --------------------------
 
 Passwordless.ID enables you to register multiple devices from multiple operating systems.
