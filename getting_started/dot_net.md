@@ -1,7 +1,7 @@
 Getting started with .Net
 =========================
 
-> Contributed by @moberauer, source: https://github.com/moberauer/passwordless.id-ASP.NET-Core-Demo
+> Contributed by [@moberauer](https://github.com/moberauer)
 
 # Passwordless.ID - ASP.NET Core Demo
 
