@@ -1,13 +1,11 @@
-Getting started with .Net
-=========================
+Getting started with ASP.NET
+============================
 
 > Contributed by [@moberauer](https://github.com/moberauer)
 
-# Passwordless.ID - ASP.NET Core Demo
+This [example repository](https://github.com/moberauer/passwordless.id-ASP.NET-Core-Demo) shows an integration between [ASP.NET Core](https://dotnet.microsoft.com/en-us/apps/aspnet) and [Passwordless.ID](https://passwordless.id).
 
-> This [example repository](https://github.com/moberauer/passwordless.id-ASP.NET-Core-Demo) shows an integration between [ASP.NET Core](https://dotnet.microsoft.com/en-us/apps/aspnet) and [Passwordless.ID](https://passwordless.id).
->
-> The project uses the .NET web sdk and just one NuGet package needs to be installed: `Microsoft.AspNetCore.Authentication.OpenIdConnect`
+The project uses the .NET web sdk and just one NuGet package needs to be installed: `Microsoft.AspNetCore.Authentication.OpenIdConnect`
 
 Using the OpenIdConnect SDK, set the default authentication scheme to OpenId, configure it to use the authoriozation code flow, the clientId and the metadata address provided by [Passwordless.ID](https://passwordless.id). Then we also add an external cookie scheme to store the user information once sign in via [Passwordless.ID](https://passwordless.id) was successful.
 
