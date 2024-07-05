@@ -13,6 +13,7 @@ navbar-links:
     - Javascript - Vanilla: getting_started/javascript_spa
     - Python - FastAPI: https://github.com/passwordless-id/fast-api-demo
     - Java - Spring Boot: https://github.com/passwordless-id/spring-boot-demo
+    - .Net / C#: getting_started/dot_net
     - Want more?: getting_started/want_more
   Docs:
     - The "big picture": docs/1_big_picture
