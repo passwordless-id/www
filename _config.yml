@@ -8,6 +8,9 @@ author: Arnaud Dagnelies
 
 navbar-var-length: true
 
+include:
+ - .well-known
+ 
 navbar-links:
   Getting Started:
     - Javascript - Vanilla: getting_started/javascript_spa
